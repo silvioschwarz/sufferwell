@@ -24,13 +24,13 @@ header{
 
 .container{
     max-width:1000px;
-    margin:0 auto;
+    margin-left: 200px;
     padding:1rem
 }
 		
 nav{
     display:flex;
-    align-items:center;
+    align-items:left;
     justify-content:space-between;
     gap:1rem
 }
