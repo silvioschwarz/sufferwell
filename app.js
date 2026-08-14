@@ -12,7 +12,7 @@ const main = document.getElementById("main");
 
 playVideo.addEventListener("click", function() {
     var video = document.createElement("video");
-    video.src = "8M9C99S_27/img/8M9C9S27.mp4";
+    video.src = "img/8M9C9S27.mp4";
     video.controls = true;
     video.autoplay = true;
     video.style.maxWidth = "100vw";
@@ -41,8 +41,8 @@ var countdownFunction = setInterval(function() {
     countdownDiv.innerHTML = phaseNum + "d " + hours + "h " + minutes + "m " + seconds + "s ";
     countdownDiv2.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
 
-    var pixImg1 = pixelatePicture("8M9C99S_27/img/Bird.jpg", weeks*128)
-    var pixImg2 = pixelatePicture("8M9C99S_27/img/Finger.jpg", weeks*128)
+    var pixImg1 = pixelatePicture("img/Bird.jpg", weeks*128)
+    var pixImg2 = pixelatePicture("img/Finger.jpg", weeks*128)
 
     pixImg1.then((canvas) => {
         img1.innerHTML = "";
