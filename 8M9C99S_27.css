@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-bg-color: #1e90ff;
+    --primary-color: #ffffff;
+    --outline-size: 0px;
+}
+
+html,
+body,
+.container {
+    width: 100%;
+    min-height: 90%;
+}
+
+
+
+
+
+.container header{
+     grid-area: header;
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    font-size: calc(1.1dvw + 1.1dvh + 1.1vmin);
+    outline:none;
+    overflow:hidden;
+    font-size-adjust: 0.3;
+    min-height: 5dvh;
+    padding: 5dvh;
+    background: lightcyan;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    outline: var(--outline-size) dashed orangered;
+
+}
+
+ .container main{
+    grid-area: content;
+    display: flex;
+    flex-direction: column;
+    min-height: 77dvh;
+    justify-content: center;
+    align-items: center;
+    outline: var(--outline-size) dashed green;
+    gap: 2%;
+ }
+
+main .text {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    font-size: calc(1.1dvw + 1.1dvh + 1.1vmin);
+    outline:none;
+    overflow:hidden;
+    font-size-adjust: 0.75;
+    color: darkblue;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    outline: var(--outline-size) dashed purple;
+}
+
+#imgDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    height: 70%;
+    gap: 5dvw;
+    outline: var(--outline-size) dashed brown;
+}
+
+canvas {
+    max-height: 50dvh;
+    max-width: 40dvw;
+    outline: var(--outline-size) dashed magenta;
+}
+
+button {
+    font-size: calc(1.1dvw + 1.1dvh + 1.1vmin);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--primary-bg-color);
+    color: var(--primary-color);
+    cursor: pointer;
+    outline: var(--outline-size) dashed red;
+}
+
+ #playVideo.hide {
+  display: none;
+}
+
+#playVideo {
+  display: block;
+}
+
+.container footer {
+    display: flex;
+    flex-direction: column;
+    grid-area: footer;
+    min-height: 10dvh;
+    background: PapayaWhip;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(1.1dvw + 1.1dvh + 1.1vmin);
+    outline:none;
+    overflow:hidden;
+    font-size-adjust: 0.3;
+    outline: var(--outline-size) dashed blue;
+}

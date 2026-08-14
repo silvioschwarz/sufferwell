@@ -23,11 +23,12 @@ header{
     height: 50px;
 }
 
-.container{
-    max-width:1000px;
-    margin-left: 200px;
-    padding:1rem
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
 }
+
 		
 nav{
     display:flex;
