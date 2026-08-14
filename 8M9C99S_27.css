@@ -11,58 +11,40 @@
 }
 
 html,
-body,
-.container {
+body{
     width: 100%;
-    min-height: 90%;
+    max-height: 40%;
 }
 
 
-
-
-
-.container header{
-     grid-area: header;
+ main .headertext {
     display: flex;
     flex-direction: column;
     font-weight: bold;
     font-size: calc(1.1dvw + 1.1dvh + 1.1vmin);
+    background-color: lightcyan;
+    padding: 2dvh;
     outline:none;
     overflow:hidden;
-    font-size-adjust: 0.3;
-    min-height: 5dvh;
-    padding: 5dvh;
-    background: lightcyan;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    outline: var(--outline-size) dashed orangered;
-
-}
-
- .container main{
-    grid-area: content;
-    display: flex;
-    flex-direction: column;
-    min-height: 77dvh;
-    justify-content: center;
-    align-items: center;
-    outline: var(--outline-size) dashed green;
-    gap: 2%;
- }
-
-main .text {
-    display: flex;
-    flex-direction: column;
-    font-weight: bold;
-    font-size: calc(1.1dvw + 1.1dvh + 1.1vmin);
-    outline:none;
-    overflow:hidden;
-    font-size-adjust: 0.75;
+    font-size-adjust: 0.25;
     color: darkblue;
     text-align: center;
     align-items: center;
     justify-content: center;
+    outline: var(--outline-size) dashed purple;
+}
+
+main .text {
+    font-weight: bold;
+    font-size: calc(1.1dvw + 1.1dvh + 1.1vmin);
+    outline:none;
+    overflow:hidden;
+    font-size-adjust: 0.5;
+    color: darkblue;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 1dvh;
     outline: var(--outline-size) dashed purple;
 }
 
@@ -102,7 +84,8 @@ button {
   display: block;
 }
 
-.container footer {
+
+footer {
     display: flex;
     flex-direction: column;
     grid-area: footer;
@@ -116,4 +99,9 @@ button {
     overflow:hidden;
     font-size-adjust: 0.3;
     outline: var(--outline-size) dashed blue;
+}
+
+footer a{
+    color:blue;
+    text-decoration:underline;
 }
