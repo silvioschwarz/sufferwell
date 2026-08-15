@@ -3,19 +3,27 @@
   --card: #fff;
   --accent: #2b8aef;
   --muted: #6b7280;
-  --sidenav-margin: 15dvw;
+  --sidenav-margin: 20dvw;
+  --sidenav-img-size: 10dvw;
 }
 
 /* The sidebar menu */
 .sidenav {
-  height: 100%; /* Full-height: remove this if you want "auto" height */
-  width: var(--sidenav-margin); /* Set the width of the sidebar */
-  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
+  height: 100%;
+  /* Full-height: remove this if you want "auto" height */
+  width: var(--sidenav-margin);
+  /* Set the width of the sidebar */
+  position: fixed;
+  /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1;
+  /* Stay on top */
+  top: 0;
+  /* Stay at the top */
   left: 0;
-  background-color: #131; /* Black */
-  overflow-x: hidden; /* Disable horizontal scroll */
+  background-color: #131;
+  /* Black */
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
   padding-top: 20px;
 }
 
@@ -82,7 +90,7 @@
   display: hidden;
 }
 
-.sidebar .visible{
+.sidebar .visible {
   display: block;
 }
 
@@ -90,13 +98,21 @@
 /* The navigation menu links */
 .sidebar a {
   padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 25px;
   color: #818181;
   display: block;
+  font-size: 2dvw;
+  outline: none;
+  overflow: hidden;
+  font-size-adjust: 0.5;
+  font-weight: bold;
 }
 
-.sidebar .content{
+.sidebar img {
+  width: var(--sidenav-img-size);
+  height: var(--sidenav-img-size);
+}
+
+.sidebar .content {
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -104,10 +120,12 @@
   left: 0;
   background: #111;
   height: 100%;
-  width: 200px;
   left: -50%;
   animation: slide 0.5s forwards;
 }
-@keyframes slide{
-  100% {left:0;}
+
+@keyframes slide {
+  100% {
+    left: 0;
+  }
 }
