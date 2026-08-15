@@ -6,8 +6,11 @@ const countdownDiv2 = document.getElementById("countdown2");
 const imgDiv = document.getElementById("imgDiv");
 const img1 = document.getElementById("img1");
 const img2 = document.getElementById("img2");
-
+const fireworkContainer = document.getElementById("firework-container");
 const playVideo = document.getElementById("playVideo");
+const playAudio = document.getElementById("playAudio");
+
+
 
 const main = document.getElementById("main");
 
@@ -16,16 +19,40 @@ playVideo?.addEventListener("click", function () {
   video.src = "img/8M9C9S27.mp4";
   video.controls = true;
   video.autoplay = true;
-  video.style.maxWidth = "100vw";
-  video.style.maxHeight = "80vh";
+  video.muted = true;
+  video.style.maxWidth = "100dvw";
+  video.style.maxHeight = "70dvh";
+
+  var audio = document.createElement("audio");
+  audio.src = "audio/sub_clair-happy-birthday-578363.mp3";
+  audio.controls = true; 
+  audio.play();
+
+  var audioText = 'Music by <a href="https://pixabay.com/de/users/sub_clair-55456531/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=578363">Sub_Clair</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=578363">Pixabay</a>'
+  var textAudio = document.createElement("div");
+  textAudio.classList.add("txtaudio")
+  textAudio.innerHTML = audioText;
+
+  document.body.classList.add("bgcolor");
 
   main.innerHTML = "";
   main.appendChild(video);
+  main.appendChild(audio);
+  main.appendChild(textAudio);
+    
+  for(let i = 0; i < 4; i++){
+    const tempElement = document.createElement("div");
+    tempElement.classList.toggle("firework");
+    tempElement.innerHTML = i + 1;
+    fireworkContainer.appendChild(tempElement);
+  }
 });
 
 const countdownFunction = setInterval(() => {
 
+
   let countdownDate = new Date("Sep 8, 2026 7:59:59").getTime();
+
   let now = new Date().getTime();
   let distance = countdownDate - now;
 
@@ -37,7 +64,7 @@ const countdownFunction = setInterval(() => {
 
   phaseDiv.innerHTML = "Phase " + (4 - weeks + 1) + " of 5";
 
-  let phaseNum = days - (weeks ) * 7;
+  let phaseNum = days - weeks * 7;
 
   countdownDiv.innerHTML =
     phaseNum + "d " + hours + "h " + minutes + "m " + seconds + "s ";
@@ -65,18 +92,33 @@ const countdownFunction = setInterval(() => {
       console.error("Error pixelating image:", error);
     });
 
-  if (distance < 20) {
+  if (distance < 0) {
+    countdownDiv.innerHTML = "Happy Birthday";
+    countdownDiv2.innerHTML = "";
+
+ imgDiv.parentNode.removeChild(imgDiv);
+
+    pixImg1
+      .then((canvas) => {
+        img1.innerHTML = "";
+      })
+      .catch((error) => {
+        console.error("Error pixelating image:", error);
+      });
+
+    pixImg2
+      .then((canvas) => {
+        img2.innerHTML = "";
+      })
+      .catch((error) => {
+        console.error("Error pixelating image:", error);
+      });
+
     playVideo.classList.toggle("hide");
     playVideo.innerHTML = " Play Video ";
     clearInterval(countdownFunction);
   }
-
-  if (distance < 0) {
-    clearInterval();
-    countdownDiv.innerHTML = "EXPIRED";
-  }
-},100);
-
+}, 100);
 
 const sendMail = () => {
   const mailAdress = "someone@example.com";
@@ -89,3 +131,6 @@ const sendMail = () => {
 
 var agentDetails = navigator.userAgent;
 console.log("User Agent: " + agentDetails);
+
+
+  //    <div class="firework"></div>         

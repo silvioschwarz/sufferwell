@@ -100,6 +100,16 @@ button {
     display: block;
 }
 
+.txtaudio{
+    color: aliceblue;
+    text-decoration: none;
+}
+
+.txtaudio a {
+     color: aliceblue;
+    text-decoration: underline;
+}
+
 footer {
     display: flex;
     flex-direction: column;

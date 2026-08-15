@@ -4,6 +4,15 @@
     box-sizing: border-box;
 }
 
+:root {
+  --bg: #f7f7fa;
+  --card: #fff;
+  --accent: #2b8aef;
+  --muted: #6b7280;
+  --sidenav-margin: 15dvw;
+}
+
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -97,9 +106,8 @@ main {
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin-left: 200px;
-    /* Same as the width of the sidebar */
-    max-height: 86vh;
+    margin-left: var( --sidenav-margin);
+    height: 87.5dvh;
 }
 
 main .container {
