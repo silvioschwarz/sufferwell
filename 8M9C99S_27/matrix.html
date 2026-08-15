@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matrix Terminal</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        overflow: hidden;
+        background: #000;
+        color: #00ff41;
+        font-family: "Courier New", monospace;
+    }
+
+    canvas {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+    }
+
+    .overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55);
+        z-index: 1;
+    }
+
+    .terminal {
+        position: relative;
+        z-index: 2;
+
+        width: min(900px, 90vw);
+        height: min(650px, 85vh);
+
+        margin: 7vh auto;
+
+        background: rgba(0, 10, 3, 0.88);
+        border: 1px solid #00ff41;
+
+        box-shadow:
+            0 0 10px #00ff41,
+            inset 0 0 30px rgba(0, 255, 65, 0.08);
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header {
+        padding: 12px 18px;
+        border-bottom: 1px solid #00ff41;
+        text-shadow: 0 0 8px #00ff41;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .status {
+        color: #00ff41;
+    }
+
+    .screen {
+        flex: 1;
+        padding: 20px;
+        overflow-y: auto;
+        text-shadow: 0 0 6px #00ff41;
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .line {
+        white-space: pre-wrap;
+    }
+
+    .input-area {
+        display: flex;
+        border-top: 1px solid #00ff41;
+        padding: 12px;
+    }
+
+    .prompt {
+        margin-right: 10px;
+        text-shadow: 0 0 8px #00ff41;
+    }
+
+    #command {
+        flex: 1;
+        background: transparent;
+        border: none;
+        outline: none;
+        color: #00ff41;
+        font: inherit;
+        caret-color: #00ff41;
+        text-shadow: 0 0 6px #00ff41;
+    }
+
+    .glitch {
+        animation: glitch 0.15s infinite alternate;
+    }
+
+    @keyframes glitch {
+        from {
+            text-shadow:
+                2px 0 #00ff41,
+                -2px 0 #003b10;
+        }
+
+        to {
+            text-shadow:
+                -2px 0 #00ff41,
+                2px 0 #003b10;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<canvas id="matrix"></canvas>
+<div class="overlay"></div>
+
+<div class="terminal">
+
+    <div class="header">
+        <span class="glitch">S̷Y̷S̷T̷E̷M̷_̷T̷E̷R̷M̷I̷N̷A̷L̷</span>
+        <span class="status">● ONLINE</span>
+    </div>
+
+    <div class="screen" id="screen">
+        <div class="line">BOOTING SYSTEM...</div>
+        <div class="line">▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ 100%</div>
+        <br>
+        <div class="line">ACCESS GRANTED.</div>
+        <div class="line">Welcome, operator.</div>
+        <div class="line">Type "help" for available commands.</div>
+        <br>
+    </div>
+
+    <div class="input-area">
+        <span class="prompt">root@matrix:~$</span>
+        <input
+            id="command"
+            type="text"
+            autocomplete="off"
+            autofocus
+            spellcheck="false"
+        >
+    </div>
+
+</div>
+
+<script>
+
+/* =========================
+   MATRIX BACKGROUND
+========================= */
+
+const canvas = document.getElementById("matrix");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const characters =
+    "アァカサタナハマヤャラワガザダバパ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZアイウエオカキクケコ";
+
+const fontSize = 16;
+let columns = Math.floor(canvas.width / fontSize);
+
+const drops = Array(columns).fill(1);
+
+function drawMatrix() {
+
+    ctx.fillStyle = "rgba(0, 0, 0, 0.06)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#00ff41";
+    ctx.font = fontSize + "px monospace";
+
+    for (let i = 0; i < drops.length; i++) {
+
+        const char =
+            characters[Math.floor(Math.random() * characters.length)];
+
+        ctx.fillText(
+            char,
+            i * fontSize,
+            drops[i] * fontSize
+        );
+
+        if (
+            drops[i] * fontSize > canvas.height &&
+            Math.random() > 0.975
+        ) {
+            drops[i] = 0;
+        }
+
+        drops[i]++;
+    }
+}
+
+setInterval(drawMatrix, 35);
+
+window.addEventListener("resize", () => {
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    columns = Math.floor(canvas.width / fontSize);
+
+    drops.length = columns;
+
+    for (let i = 0; i < columns; i++) {
+        if (!drops[i]) drops[i] = 1;
+    }
+});
+
+
+/* =========================
+   TERMINAL
+========================= */
+
+const input = document.getElementById("command");
+const screen = document.getElementById("screen");
+
+function print(text) {
+
+    const line = document.createElement("div");
+
+    line.className = "line";
+
+    line.textContent = text;
+
+    screen.appendChild(line);
+
+    screen.scrollTop = screen.scrollHeight;
+}
+
+input.addEventListener("keydown", function(event) {
+
+    if (event.key !== "Enter") return;
+
+    const command = input.value.trim();
+
+    if (!command) return;
+
+    print("root@matrix:~$ " + command);
+
+    processCommand(command);
+
+    input.value = "";
+});
+
+
+function processCommand(command) {
+
+    const cmd = command.toLowerCase();
+
+    if (cmd === "help") {
+
+        print("");
+        print("AVAILABLE COMMANDS");
+        print("------------------");
+        print("help       - show this message");
+        print("clear      - clear terminal");
+        print("status     - system status");
+        print("whoami     - identify operator");
+        print("matrix     - generate strange characters");
+        print("scan       - scan network");
+        print("exit       - terminate session");
+        print("");
+
+    }
+
+    else if (cmd === "clear") {
+
+        screen.innerHTML = "";
+
+    }
+
+    else if (cmd === "status") {
+
+        print("SYSTEM STATUS: ONLINE");
+        print("CPU: " + Math.floor(Math.random() * 40 + 20) + "%");
+        print("MEMORY: " + Math.floor(Math.random() * 50 + 30) + "%");
+        print("NETWORK: ENCRYPTED");
+        print("UPTIME: " + Math.floor(Math.random() * 9999) + " seconds");
+
+    }
+
+    else if (cmd === "whoami") {
+
+        print("OPERATOR: UNKNOWN");
+        print("CLEARANCE: ██████████");
+        print("IDENTITY: 0x" +
+            Math.floor(Math.random() * 0xffffff)
+            .toString(16)
+            .toUpperCase());
+
+    }
+
+    else if (cmd === "matrix") {
+
+        const strange =
+            "ꙮ 𒀱 𓂀 ᛝ ⸸ ☍ ⌬ 𐌗 Ⱥ ʘ ⟁ ⌁ ⌘ ※ ∴ ∵ ⁂";
+
+        print(strange);
+        print(strange);
+        print(strange);
+
+    }
+
+    else if (cmd === "scan") {
+
+        print("INITIALIZING NETWORK SCAN...");
+
+        setTimeout(() => {
+            print("NODE_01 ........ ONLINE");
+            print("NODE_02 ........ ONLINE");
+            print("NODE_03 ........ UNKNOWN");
+            print("NODE_04 ........ ENCRYPTED");
+            print("SCAN COMPLETE.");
+        }, 500);
+
+    }
+
+    else if (cmd === "exit") {
+
+        print("SESSION TERMINATED.");
+        print("...");
+        print("Just kidding. You're still here.");
+
+    }
+
+    else {
+
+        print("COMMAND NOT FOUND: " + command);
+        print('Type "help" for available commands.');
+
+    }
+}
+
+</script>
+
+</body>
+</html>

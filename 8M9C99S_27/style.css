@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-bg-color: #1e90ff;
+    --primary-color: #ffffff;
+    --outline-size: 0px;
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+      min-height: 100vh;
+  margin: 0;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+
+ header {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    font-size: calc(1.1dvw + 1.1dvh + 1.1vmin);
+    outline:none;
+    overflow:hidden;
+    font-size-adjust: 0.25;
+    max-height: 3dvh;
+    padding: 7dvh;
+    background: lightcyan;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    outline: var(--outline-size) dashed orangered;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 2dvh;
+    max-height: 75dvh;
+    justify-content: center;
+    align-items: center;
+    outline: var(--outline-size) dashed green;
+}
+
+
+main .text {
+    font-weight: bold;
+    font-size: calc(1.1dvw + 1.1dvh + 1.1vmin);
+    outline:none;
+    overflow:hidden;
+    font-size-adjust: 0.5;
+    color: darkblue;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    outline: var(--outline-size) dashed purple;
+}
+
+#imgDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    height: 70%;
+    gap: 5dvw;
+    outline: var(--outline-size) dashed brown;
+}
+
+canvas {
+    max-height: 50dvh;
+    max-width: 40dvw;
+    outline: var(--outline-size) dashed magenta;
+}
+
+button {
+    font-size: calc(1.1dvw + 1.1dvh + 1.1vmin);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--primary-bg-color);
+    color: var(--primary-color);
+    cursor: pointer;
+    outline: var(--outline-size) dashed red;
+}
+
+ #playVideo.hide {
+  display: none;
+}
+
+#playVideo {
+  display: block;
+}
+
+ footer {
+    display: flex;
+    flex-direction: column;
+    max-height: 10dvh;
+    background: PapayaWhip;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(1.1dvw + 1.1dvh + 1.1vmin);
+    outline:none;
+    overflow:hidden;
+    font-size-adjust: 0.3;
+    outline: var(--outline-size) dashed blue;
+}
