@@ -16,20 +16,20 @@ html {
 }
 
 body {
-      min-height: 100vh;
-  margin: 0;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
+    min-height: 100dvh;
+    margin: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
 }
 
 
- header {
+header {
     display: flex;
     flex-direction: column;
     font-weight: bold;
     font-size: calc(1.1dvw + 1.1dvh + 1.1vmin);
-    outline:none;
-    overflow:hidden;
+    outline: none;
+    overflow: hidden;
     font-size-adjust: 0.25;
     max-height: 3dvh;
     padding: 7dvh;
@@ -43,8 +43,8 @@ body {
 main {
     display: flex;
     flex-direction: column;
-    gap: 2dvh;
-    max-height: 75dvh;
+
+    max-height: 100dvh;
     justify-content: center;
     align-items: center;
     outline: var(--outline-size) dashed green;
@@ -54,8 +54,8 @@ main {
 main .text {
     font-weight: bold;
     font-size: calc(1.1dvw + 1.1dvh + 1.1vmin);
-    outline:none;
-    overflow:hidden;
+    outline: none;
+    overflow: hidden;
     font-size-adjust: 0.5;
     color: darkblue;
     text-align: center;
@@ -92,15 +92,15 @@ button {
     outline: var(--outline-size) dashed red;
 }
 
- #playVideo.hide {
-  display: none;
+#playVideo.hide {
+    display: none;
 }
 
 #playVideo {
-  display: block;
+    display: block;
 }
 
- footer {
+footer {
     display: flex;
     flex-direction: column;
     max-height: 10dvh;
@@ -109,8 +109,8 @@ button {
     justify-content: center;
     align-items: center;
     font-size: calc(1.1dvw + 1.1dvh + 1.1vmin);
-    outline:none;
-    overflow:hidden;
+    outline: none;
+    overflow: hidden;
     font-size-adjust: 0.3;
     outline: var(--outline-size) dashed blue;
 }

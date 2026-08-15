@@ -9,10 +9,12 @@
   --bg: #f7f7fa;
   --card: #fff;
   --accent: #2b8aef;
-  --muted: #6b7280
+  --muted: #6b7280;
+  --sidenav-margin: 15dvw;
 }
 
 body {
+  height: 100%;
   margin: 0;
   font-family: Inter, system-ui, Segoe UI, Roboto, Arial;
   background: var(--bg);
@@ -22,14 +24,16 @@ body {
 header {
   background: linear-gradient(90deg, #fff 0, #f1f5f9 100%);
   border-bottom: 1px solid #e6e9ef;
-  height: 2dvh;
-  margin-left: 200px;
+  height: 5dvh;
+  margin-left: var( --sidenav-margin);
+  padding: 1dvw;
   display: flex;
   flex-direction: row;
   align-items: center;
   text-align: center;
   justify-content: left;
-  padding: 10px;
+  /* position: fixed;
+  z-index: 9999; */
 }
 
 .brand {
@@ -43,76 +47,23 @@ a {
 }
 
 /* Style page content */
+main {
+  margin-left: var( --sidenav-margin); /* Same as the width of the sidebar */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  max-height: 100dvh;
+}
+
+/* Style page content */
 
 embed {
-  height: 96.14dvh;
+  height: 95dvh;
   width: 100%;
   border: none;
 }
-
-/* The sidebar menu */
-.sidenav {
-  height: 100%;
-  /* Full-height: remove this if you want "auto" height */
-  width: 200px;
-  /* Set the width of the sidebar */
-  position: fixed;
-  /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1;
-  /* Stay on top */
-  top: 0;
-  /* Stay at the top */
-  left: 0;
-  background-color: #111;
-  /* Black */
-  overflow-x: hidden;
-  /* Disable horizontal scroll */
-  padding-top: 20px;
-}
-
-/* The navigation menu links */
-.sidenav a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
-/* Add a black background color to the top navigation */
-.topnav {
-  background-color: #333;
-  overflow: hidden;
-}
-
-/* Style the links inside the navigation bar */
-.topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-/* Add an active class to highlight the current page */
-.active {
-  background-color: #04AA6D;
-  color: white;
-}
-
-/* Hide the link that should open and close the topnav on small screens */
-.topnav .icon {
-  display: none;
-}
-
-
 
 
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
