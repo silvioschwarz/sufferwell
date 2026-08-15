@@ -112,5 +112,6 @@ footer {
     outline: none;
     overflow: hidden;
     font-size-adjust: 0.3;
+    padding: 20px;
     outline: var(--outline-size) dashed blue;
 }

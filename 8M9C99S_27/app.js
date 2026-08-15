@@ -37,7 +37,7 @@ const countdownFunction = setInterval(() => {
 
   phaseDiv.innerHTML = "Phase " + (4 - weeks + 1) + " of 5";
 
-  let phaseNum = days - (weeks - 1) * 7;
+  let phaseNum = days - (weeks ) * 7;
 
   countdownDiv.innerHTML =
     phaseNum + "d " + hours + "h " + minutes + "m " + seconds + "s ";
