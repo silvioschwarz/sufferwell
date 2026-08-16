@@ -10,8 +10,6 @@ const fireworkContainer = document.getElementById("firework-container");
 const playVideo = document.getElementById("playVideo");
 const playAudio = document.getElementById("playAudio");
 
-
-
 const main = document.getElementById("main");
 
 playVideo?.addEventListener("click", function () {
@@ -49,7 +47,6 @@ playVideo?.addEventListener("click", function () {
 });
 
 const countdownFunction = setInterval(() => {
-
 
   let countdownDate = new Date("Sep 8, 2026 7:59:59").getTime();
 
@@ -92,6 +89,7 @@ const countdownFunction = setInterval(() => {
       console.error("Error pixelating image:", error);
     });
 
+
   if (distance < 0) {
     countdownDiv.innerHTML = "Happy Birthday";
     countdownDiv2.innerHTML = "";
@@ -131,6 +129,3 @@ const sendMail = () => {
 
 var agentDetails = navigator.userAgent;
 console.log("User Agent: " + agentDetails);
-
-
-  //    <div class="firework"></div>         

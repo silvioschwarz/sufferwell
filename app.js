@@ -1,6 +1,8 @@
 const sidebar = document.querySelector(".sidebar");
 const root = document.querySelector(":root");
 
+const embed = document.getElementById("embed");
+
 function show() {
   // swipe right
   sidebar.style.width = "15dvh";
@@ -20,3 +22,14 @@ function toggle() {
   sidebar.classList.contains("visible") ? hide() : show();
 }
 
+let countdownDate = new Date("Sep 8, 2026 7:59:59").getTime();
+let now = new Date().getTime();
+let distance = countdownDate - now;
+let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+let weeks = Math.round(days / 7);
+
+let phaseNum = days - weeks * 7;
+
+if (phaseNum == 3) {
+  embed.src = "8M9C99S_27/matrix.html";
+}
