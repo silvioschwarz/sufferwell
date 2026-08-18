@@ -57,11 +57,12 @@ const countdownFunction = setInterval(() => {
   let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-  let weeks = Math.round(days / 7);
+  let weeks = Math.floor(days / 7);
 
-  phaseDiv.innerHTML = "Phase " + (4 - weeks + 1) + " of 5";
+  phaseDiv.innerHTML = "Phase " + (5 - weeks) + " of 5";
 
   let phaseNum = days - weeks * 7;
+  console.log(phaseNum)
 
   countdownDiv.innerHTML =
     phaseNum + "d " + hours + "h " + minutes + "m " + seconds + "s ";
