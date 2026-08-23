@@ -26,6 +26,9 @@ header {
     outline: var(--outline-size) dashed orangered;
 }
 
+body{
+    margin-left: 10dvw;
+}
 
 main .text {
     font-weight: bold;
@@ -46,15 +49,14 @@ main .text {
     align-items: center;
     text-align: center;
     justify-content: center;
-    height: 65dvh;
-    width: 100dvw;
     gap: 7dvw;
     outline: var(--outline-size) dashed brown;
+    padding: 3dvh;
 }
 
 canvas {
-    height: 50dvh;
-    width: 25dvh;
+    max-height: 50dvh;
+    max-width: 40dvw;
     outline: var(--outline-size) dashed magenta;
 }
 

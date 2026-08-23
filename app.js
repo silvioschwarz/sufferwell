@@ -30,6 +30,8 @@ let weeks = Math.round(days / 7);
 
 let phaseNum = days - weeks * 7;
 
-if (phaseNum == 3) {
-  embed.src = "8M9C99S_27/matrix.html";
+console.log(weeks)
+
+if (weeks == 2) {
+  embed.setAttribute("src","./8M9C99S_27/matrix.html");
 }

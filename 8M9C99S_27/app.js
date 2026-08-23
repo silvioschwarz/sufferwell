@@ -18,12 +18,15 @@ playVideo?.addEventListener("click", function () {
   video.controls = true;
   video.autoplay = true;
   video.muted = true;
+  video.preload = "none";
+  //video.loading = "lazy";
   video.style.maxWidth = "100dvw";
   video.style.maxHeight = "70dvh";
 
   var audio = document.createElement("audio");
   audio.src = "audio/sub_clair-happy-birthday-578363.mp3";
   audio.controls = true; 
+
   audio.play();
 
   var audioText = 'Music by <a href="https://pixabay.com/de/users/sub_clair-55456531/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=578363">Sub_Clair</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=578363">Pixabay</a>'
@@ -46,7 +49,7 @@ playVideo?.addEventListener("click", function () {
   }
 });
 
-const countdownFunction = setInterval(() => {
+function countdownFunction() {
 
   let countdownDate = new Date("Sep 8, 2026 7:59:59").getTime();
 
@@ -63,7 +66,6 @@ const countdownFunction = setInterval(() => {
   phaseDiv.innerHTML = "Phase " + (5 - weeks) + " of 5";
 
   let phaseNum = days - weeks * 7;
-  console.log(phaseNum)
 
   countdownDiv.innerHTML =
     phaseNum + "d " + hours + "h " + minutes + "m " + seconds + "s ";
@@ -118,16 +120,36 @@ const countdownFunction = setInterval(() => {
     playVideo.innerHTML = " Play Video ";
     clearInterval(countdownFunction);
   }
-}, 100);
-
-const sendMail = () => {
-  const mailAdress = "someone@example.com";
-  const ccRecipients = "mrinal.annand@gmail.com";
-  const subject = encodeURIComponent("This is my subject");
-  const body = encodeURIComponent(document.getElementById("myText").value);
-  const link = `mailto:${mailAdress}?cc=${ccRecipients}&subject=${subject}&body=${body}`;
-  window.location.href = link;
+  setTimeout(countdownFunction, 1000)
 };
+
+function init(){
+
+  let pixImg1 = pixelatePicture("8M9C99S_27/img/Bird.jpg", 1024);
+  let pixImg2 = pixelatePicture("8M9C99S_27/img/Finger.jpg", 1024);
+
+  pixImg1
+    .then((canvas) => {
+      img1.innerHTML = "";
+      img1.appendChild(canvas);
+    })
+    .catch((error) => {
+      console.error("Error pixelating image:", error);
+    });
+
+  pixImg2
+    .then((canvas) => {
+      img2.innerHTML = "";
+      img2.appendChild(canvas);
+    })
+    .catch((error) => {
+      console.error("Error pixelating image:", error);
+    });
+
+  countdownFunction();
+}
+
+init();
 
 var agentDetails = navigator.userAgent;
 console.log("User Agent: " + agentDetails);
