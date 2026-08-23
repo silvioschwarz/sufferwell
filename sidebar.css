@@ -1,79 +1,8 @@
-:root {
-  --bg: #f7f7fa;
-  --card: #fff;
-  --accent: #2b8aef;
-  --muted: #6b7280;
-  --sidenav-margin: 20dvw;
-  --sidenav-img-size: 10dvw;
-}
-
-/* The sidebar menu */
-.sidenav {
-  height: 100%;
-  /* Full-height: remove this if you want "auto" height */
-  width: var(--sidenav-margin);
-  /* Set the width of the sidebar */
-  position: fixed;
-  /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1;
-  /* Stay on top */
-  top: 0;
-  /* Stay at the top */
-  left: 0;
-  background-color: #131;
-  /* Black */
-  overflow-x: hidden;
-  /* Disable horizontal scroll */
-  padding-top: 20px;
-}
-
-/* The navigation menu links */
-.sidenav a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
-/* Add a black background color to the top navigation */
-.topnav {
-  background-color: #333;
-  overflow: hidden;
-}
-
-/* Style the links inside the navigation bar */
-.topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-/* Add an active class to highlight the current page */
-.active {
-  background-color: #04AA6D;
-  color: white;
-}
-
-/* Hide the link that should open and close the topnav on small screens */
-.topnav .icon {
-  display: none;
-}
-
 /* The sidebar menu */
 .sidebar {
   height: 100dvh;
   /* Full-height: remove this if you want "auto" height */
-  width: var(--sidenav-margin);
+  width: var(--sidenavmargin);
   /* Set the width of the sidebar */
   position: fixed;
   /* Fixed Sidebar (stay in place on scroll) */
@@ -86,12 +15,12 @@
   /* Black */
   overflow-x: hidden;
   /* Disable horizontal scroll */
-  padding-top: 20px;
   display: hidden;
 }
 
-.sidebar .visible {
-  display: block;
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
 }
 
 
@@ -108,8 +37,8 @@
 }
 
 .sidebar img {
-  width: var(--sidenav-img-size);
-  height: var(--sidenav-img-size);
+  width: var(--sidenavimgsize);
+  height: var(--sidenavimgsize);
 }
 
 .sidebar .content {
@@ -118,8 +47,6 @@
   position: absolute;
   top: 0;
   left: 0;
-  background: #111;
-  height: 100%;
   left: -50%;
   animation: slide 0.5s forwards;
 }

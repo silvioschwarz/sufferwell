@@ -10,22 +10,24 @@
   --card: #fff;
   --accent: #2b8aef;
   --muted: #6b7280;
-  --sidenav-margin: 15dvw;
+  --sidenavmargin: 20dvw;
+  --sidenavimgsize: 10dvw;
+  --calcfs: (1.1dvw + 1.1dvh + 1.1vmin);
 }
 
 body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   height: 100%;
-  margin: 0;
-  font-family: Inter, system-ui, Segoe UI, Roboto, Arial;
-  background: var(--bg);
-  color: #111
+  color: #333;
 }
+
 
 header {
   background: linear-gradient(90deg, #fff 0, #f1f5f9 100%);
   border-bottom: 1px solid #e6e9ef;
   height: 5dvh;
-  margin-left: var( --sidenav-margin);
+  margin-left: var( --sidenavmargin);
   padding: 1dvw;
   display: flex;
   flex-direction: row;
@@ -47,22 +49,105 @@ a {
 }
 
 /* Style page content */
+
 main {
-  margin-left: var( --sidenav-margin); /* Same as the width of the sidebar */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-left: var( --sidenavmargin);
+  /* Same as the width of the sidebar */
+  height: 89dvh;
+}
+
+main .content {
   display: flex;
   flex-direction: row;
   align-items: center;
-  text-align: center;
   justify-content: center;
-  max-height: 100dvh;
+  gap: 1dvw;
 }
+
+main .container {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 3dvh 5dvw;
+  border-radius: 15px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-height: 50dvh;
+  text-align: center;
+}
+
+.container p {
+  font-size: var( --calcfs);
+}
+
+.content img{
+    width: var(--logosizewidth);
+    height: var(--logosizeheight);
+}
+
+
+h1 {
+  font-size: calc(1.5*var( --calcfs));
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.tagline {
+  font-size: 1.5em;
+  color: #667eea;
+  margin: 0;
+  font-style: italic;
+}
+
+.description {
+  font-size: 1.1em;
+  color: #666;
+  line-height: 1.6;
+  margin: 30px 0;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 12px 40px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 1.1em;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
 
 /* Style page content */
 
 embed {
-  height: 95dvh;
-  width: 100%;
+  height: 100dvh;
+  width: 40dvw;
   border: none;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 2dvh;
+  height: 6dvh;
+  margin-left: var( --sidenavmargin);
 }
 
 

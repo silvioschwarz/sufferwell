@@ -5,22 +5,9 @@
 }
 
 :root {
-    --primary-bg-color: #1e90ff;
-    --primary-color: #ffffff;
     --outline-size: 0px;
 }
 
-html {
-    width: 100%;
-    min-height: 100%;
-}
-
-body {
-    min-height: 100dvh;
-    margin: 0;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-}
 
 
 header {
@@ -31,23 +18,12 @@ header {
     outline: none;
     overflow: hidden;
     font-size-adjust: 0.25;
-    max-height: 3dvh;
-    padding: 7dvh;
-    background: lightcyan;
+    min-height: 3dvh;
+    padding: 3dvh;
     align-items: center;
     text-align: center;
     justify-content: center;
     outline: var(--outline-size) dashed orangered;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-
-    max-height: 100dvh;
-    justify-content: center;
-    align-items: center;
-    outline: var(--outline-size) dashed green;
 }
 
 
@@ -56,7 +32,7 @@ main .text {
     font-size: calc(1.1dvw + 1.1dvh + 1.1vmin);
     outline: none;
     overflow: hidden;
-    font-size-adjust: 0.5;
+    font-size-adjust: 0.75;
     color: darkblue;
     text-align: center;
     align-items: center;
@@ -70,14 +46,15 @@ main .text {
     align-items: center;
     text-align: center;
     justify-content: center;
-    height: 70%;
-    gap: 5dvw;
+    height: 65dvh;
+    width: 100dvw;
+    gap: 7dvw;
     outline: var(--outline-size) dashed brown;
 }
 
 canvas {
-    max-height: 50dvh;
-    max-width: 40dvw;
+    height: 50dvh;
+    width: 25dvh;
     outline: var(--outline-size) dashed magenta;
 }
 
@@ -108,20 +85,4 @@ button {
 .txtaudio a {
      color: aliceblue;
     text-decoration: underline;
-}
-
-footer {
-    display: flex;
-    flex-direction: column;
-    max-height: 10dvh;
-    background: PapayaWhip;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    font-size: calc(1.1dvw + 1.1dvh + 1.1vmin);
-    outline: none;
-    overflow: hidden;
-    font-size-adjust: 0.3;
-    padding: 20px;
-    outline: var(--outline-size) dashed blue;
 }

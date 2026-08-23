@@ -59,6 +59,7 @@ const countdownFunction = setInterval(() => {
   let seconds = Math.floor((distance % (1000 * 60)) / 1000);
   let weeks = Math.floor(days / 7);
 
+
   phaseDiv.innerHTML = "Phase " + (5 - weeks) + " of 5";
 
   let phaseNum = days - weeks * 7;
