@@ -1,6 +1,7 @@
 
 * {
         box-sizing: border-box;
+        margin: 0;
     }
 
 :root {
@@ -15,6 +16,7 @@
         color: #00ff41;
         font-family: "Courier New", monospace;
         font-size: var( --calcfs);
+        height: 100%;
     }
 
     canvas {
@@ -28,27 +30,26 @@
         inset: 0;
         background: rgba(0, 0, 0, 0.55);
         z-index: 1;
+   
     }
 
     .terminal {
-        position: relative;
+        position:relative;
+        margin: 10dvh 20dvw;
         z-index: 2;
-
-        width: 70ch; /*min(900px, 90dvw);*/
-        height: min(650px, 85dvh);
-
-        margin: 7vh auto;
-
+        max-width: 60dvw; /*min(900px, 90dvw);*/
+        height: 80dvh;
         background: rgba(0, 10, 3, 0.88);
         border: 1px solid #00ff41;
 
         box-shadow:
             0 0 10px #00ff41,
             inset 0 0 30px rgba(0, 255, 65, 0.08);
-
+        
         display: flex;
         flex-direction: column;
     }
+        
 
     .header {
         padding: 12px 18px;
@@ -63,11 +64,24 @@
         color: #00ff41;
     }
 
+    .title {
+        flex:1;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        overflow-y: auto;
+        text-shadow: 0 0 6px #00ff41;
+        text-align: center;
+        
+        line-height: 1.6;
+    }
+
     .screen {
         flex: 1;
         padding: 20px;
         overflow-y: auto;
         text-shadow: 0 0 6px #00ff41;
+        text-align: left;
         
         line-height: 1.6;
     }

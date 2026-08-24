@@ -132,9 +132,11 @@ h1 {
 /* Style page content */
 
 embed {
-  height: 100dvh;
-  width: 100dvw;
   border: none;
+  width: 80dvw;
+  height: 90dvh;
+  
+
 }
 
 footer {

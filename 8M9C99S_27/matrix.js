@@ -58,10 +58,11 @@ window.addEventListener("resize", () => {
 const input = document.getElementById("command");
 const screen = document.getElementById("screen");
 const header = document.getElementById("header");
+const title = document.getElementById("title");
+
 const audio = document.getElementById("audio");
 
 const toId = setTimeout(init, 2000);
-
 
 function init() {
   var i = 0;
@@ -75,47 +76,47 @@ function init() {
       header.innerHTML = "";
       if (width >= 100) {
         clearInterval(id);
-        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀               ⠀");
-        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⣀⣀⣤⣴⡞⠀⠀⣀⣴⣿⠀⠀               ");
-        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⠿⣿⣿⢿⣿⣷⣶⣿⣿⣿⡟⠀⠀               ");
-        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⡏⠀⠈⠁⠘⠿⠟⠛⢉⣽⣿⠃⠀⠀               ");
-        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡘⠃⠀⠀⠀⠀⠀⠀⢰⣿⣿⣋⣀⡄⠀               ");
-        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣦⠀⠀⠀⠀⠀⣀⣬⣿⣿⡿⠋⠀⠀               ");
-        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣷⣄⠀⣀⣀⣻⣿⣏⣉⠀⠀⠀⠀               ");
-        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣦⡙⢿⣿⣿⣿⣿⣿⡷⠈⠙⠛⠛⠋⠁⠀⠀⠀⠀               ");
-        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣄⠙⢿⠿⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀               ");
-        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣿⣿⣿⣿⣿⡿⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀               ⠀");
-        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣾⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀               ⠀");
-        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⠿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀               ⠀");
-        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⣿⣿⠟⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀               ⠀");
-        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀               ");
-        print(" ")
-        print("        Nero's Torch LatentSpace AMethodToMadness             ");
-        print(" ")
-        print(" ")
+        print("                              ⢀  ");
+        print("                ⣴⣿⣀⣀⣤⣴⡞⠀⠀⣀⣴⣿  ");
+        print("               ⣸⣿⠿⣿⣿⢿⣿⣷⣶⣿⣿⣿⡟⠀");
+        print("               ⣿⡏⠀⠈⠁⠘⠿⠟⠛⢉⣽⣿⠃  ");
+        print("              ⣠⡘⠃⠀⠀⠀⠀⠀⠀⢰⣿⣿⣋⣀⡄ ");
+        print("            ⣠⣾⣿⣿⣦⠀⠀⠀⠀⠀⣀⣬⣿⣿⡿⠋  ");
+        print("            ⣿⣿⣿⣿⣿⣷⣄⠀⣀⣀⣻⣿⣏⣉    ");
+        print("         ⢀⣴⣦⡙⢿⣿⣿⣿⣿⣿⡷⠈⠙⠛⠛⠋⠁   ");
+        print("       ⢀⣴⣿⣿⣿⣿⣄⠙⢿⠿⠛⠁           ");
+        print("      ⣠⣿⣿⣿⣿⣿⡿⠛⠁                ");
+        print("    ⢠⣾⣿⣿⣿⣿⠟⠁                  ");
+        print("  ⢀⣴⣿⣿⣿⠿⠋                     ");
+        print(" ⠠⣿⣿⠟⠋⠁                        ");
+        print("⠀⠉⠁                            ");
+        print(" ");
+        print("Nero's Torch LatentSpace AMethodToMadness     ");
+        print(" ");
+        print(" ");
 
         print("ALL YOUR SITE ARE BELONG TO US NOW!", header, "glitch");
         print("● ONLINE", header, "status");
 
         setTimeout(() => {
-      print("ACCESS GRANTED.",);
-      print(" ");
-    }, 3500);
+          print("ACCESS GRANTED.");
+          print(" ");
+        }, 3500);
 
-    setTimeout(() => {
-      print("Welcome, 8M9C99S_27.",);
-      print(" ");
-    }, 5000);
+        setTimeout(() => {
+          print("Welcome, 8M9C99S_27.");
+          print(" ");
+        }, 5000);
 
-    setTimeout(() => {
-      print('Type "help" for available commands.');
-      print(" ");
-    }, 7000);
+        setTimeout(() => {
+          print('Type "help" for available commands.');
+          print(" ");
+        }, 7000);
 
         i = 0;
       } else {
         width++;
-        let progressBar ="█".repeat(width).replace(/(.{5})/g,"$1 ")
+        let progressBar = "█".repeat(width).replace(/(.{5})/g, "$1 ");
 
         print(progressBar, header);
         print(width + " %", header);
@@ -124,14 +125,13 @@ function init() {
   }
 }
 
-function print(text, location = screen, classO="line") {
+function print(text, location = screen, classO = "line") {
+  let line = document.createElement("div");
 
-      let line = document.createElement("div");
-
-    if(location == "header"){
-        let line = document.createElement("span");
-    }else{
-    }
+  if (location == "header") {
+    let line = document.createElement("span");
+  } else {
+  }
 
   line.className = classO;
 
@@ -142,6 +142,7 @@ function print(text, location = screen, classO="line") {
   location.scrollTop = location.scrollHeight;
 }
 
+input.focus();
 input.addEventListener("keydown", function (event) {
   if (event.key !== "Enter") return;
 
@@ -186,13 +187,13 @@ function processCommand(command) {
     print("UPTIME: " + Math.floor(Math.random() * 9999) + " seconds");
     print(" ");
   } else if (cmd === "whoami") {
-     print(" ");
+    print(" ");
     print("OPERATOR: Smarti");
     print("CLEARANCE: ██████████");
     print("IDENTITY: 0x8M9C99S");
-     print(" ");
+    print(" ");
   } else if (cmd === "scan") {
-     print(" ");
+    print(" ");
     print("INITIALIZING NETWORK SCAN...");
 
     setTimeout(() => {
@@ -202,54 +203,58 @@ function processCommand(command) {
       print("NODE_04 ........ ENCRYPTED");
       print("SCAN COMPLETE.");
     }, 500);
-     print(" ");
+    print(" ");
   } else if (cmd === "exit") {
-     print(" ");
+    print(" ");
     print("SESSION TERMINATED.");
     print("...");
     print("Just kidding. You're still here.");
-     print(" ");
+    print(" ");
   } else if (cmd === "cake") {
-    audio.src ="audio/stillAlive.mp3";
+    audio.src = "audio/stillAlive.mp3";
     console.log(audio);
-     print("Please stand by ...");
-     setTimeout(()=>{
-        print("Playing audio ...")
-     },500)
+    print("Please stand by ...");
+    setTimeout(() => {
+      print("Playing audio ...");
+    }, 500);
 
     audio.play();
 
-    var cakeSong = window.open("", 
-        "_blank", 
-        "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1000,height=1000"
+    var cakeSong = window.open(
+      "",
+      "_blank",
+      "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1000,height=1000",
     );
 
     setTimeout(() => {
       cakeSong.close();
     }, 2000);
 
-    print("stop to stop audio");
-
+    print("stop    - stop audio");
+    print(" ");
   } else if (cmd === "no cake") {
-   audio.src ="audio/noCake.mp3";
+    audio.src = "audio/noCake.mp3";
     audio.play();
-    var cakeSong = window.open("", 
-        "_blank", 
-        "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1000,height=1000"
+    var cakeSong = window.open(
+      "",
+      "_blank",
+      "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1000,height=1000",
     );
 
     setTimeout(() => {
       cakeSong.close();
     }, 2000);
-     print("stop to stop audio");
-} else if (cmd === "stop") {
-    print("Stopping audio ...")
-    console.log(audio);
-        audio.pause();
-} else {
-     print(" ");
+    print("stop    - stop audio");
+    print(" ");
+  } else if (cmd === "stop") {
+    print(" ");
+    print("Stopping audio ...");
+    print(" ");
+    audio.pause();
+  } else {
+    print(" ");
     print("COMMAND NOT FOUND: " + command);
     print('Type "help" for available commands.');
-     print(" ");
+    print(" ");
   }
 }
