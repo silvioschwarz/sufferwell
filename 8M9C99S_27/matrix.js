@@ -113,6 +113,8 @@ function init() {
           print(" ");
         }, 7000);
 
+  
+
         i = 0;
       } else {
         width++;
@@ -142,7 +144,7 @@ function print(text, location = screen, classO = "line") {
   location.scrollTop = location.scrollHeight;
 }
 
-input.focus();
+
 input.addEventListener("keydown", function (event) {
   if (event.key !== "Enter") return;
 
