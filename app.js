@@ -30,8 +30,10 @@ let weeks = Math.round(days / 7);
 
 let phaseNum = days - weeks * 7;
 
-console.log(weeks)
-
 if (weeks == 2) {
   embed.setAttribute("src","./8M9C99S_27/matrix.html");
+}
+
+if (weeks == 1) {
+  embed.setAttribute("src","./8M9C99S_27/newBeginnings.html");
 }

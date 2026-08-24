@@ -1,5 +1,8 @@
 import { pixelatePicture, createPixelatedCanvas } from "./pixalate.js";
 
+
+window.addEventListener("load", function(){
+
 const phaseDiv = document.getElementById("phase");
 const countdownDiv = document.getElementById("countdown");
 const countdownDiv2 = document.getElementById("countdown2");
@@ -11,6 +14,10 @@ const playVideo = document.getElementById("playVideo");
 const playAudio = document.getElementById("playAudio");
 
 const main = document.getElementById("main");
+
+  
+
+
 
 playVideo?.addEventListener("click", function () {
   var video = document.createElement("video");
@@ -123,6 +130,10 @@ function countdownFunction() {
   setTimeout(countdownFunction, 1000)
 };
 
+countdownFunction();
+
+});
+
 function init(){
 
   let pixImg1 = pixelatePicture("8M9C99S_27/img/Bird.jpg", 1024);
@@ -148,8 +159,3 @@ function init(){
 
   countdownFunction();
 }
-
-init();
-
-var agentDetails = navigator.userAgent;
-console.log("User Agent: " + agentDetails);
