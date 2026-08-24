@@ -3,12 +3,18 @@
         box-sizing: border-box;
     }
 
+:root {
+  --sidenavmargin: 20dvw;
+  --calcfs: calc(0.5*(1.1dvw + 1.1dvh + 1.1vmin));
+}
+
     body {
         margin: 0;
         overflow: hidden;
         background: #000;
         color: #00ff41;
         font-family: "Courier New", monospace;
+        font-size: var( --calcfs);
     }
 
     canvas {
@@ -28,7 +34,7 @@
         position: relative;
         z-index: 2;
 
-        width: 80dvw; /*min(900px, 90dvw);*/
+        width: 70ch; /*min(900px, 90dvw);*/
         height: min(650px, 85dvh);
 
         margin: 7vh auto;
@@ -50,6 +56,7 @@
         text-shadow: 0 0 8px #00ff41;
         display: flex;
         justify-content: space-between;
+
     }
 
     .status {
@@ -61,7 +68,7 @@
         padding: 20px;
         overflow-y: auto;
         text-shadow: 0 0 6px #00ff41;
-        font-size: 15px;
+        
         line-height: 1.6;
     }
 

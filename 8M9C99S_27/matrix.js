@@ -58,6 +58,7 @@ window.addEventListener("resize", () => {
 const input = document.getElementById("command");
 const screen = document.getElementById("screen");
 const header = document.getElementById("header");
+const audio = document.getElementById("audio");
 
 const toId = setTimeout(init, 2000);
 
@@ -74,22 +75,24 @@ function init() {
       header.innerHTML = "";
       if (width >= 100) {
         clearInterval(id);
-        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
-        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀");
-        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⣀⣀⣤⣴⡞⠀⠀⣀⣴⣿⠀⠀");
-        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⠿⣿⣿⢿⣿⣷⣶⣿⣿⣿⡟⠀⠀");
-        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⡏⠀⠈⠁⠘⠿⠟⠛⢉⣽⣿⠃⠀⠀");
-        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡘⠃⠀⠀⠀⠀⠀⠀⢰⣿⣿⣋⣀⡄⠀");
-        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣦⠀⠀⠀⠀⠀⣀⣬⣿⣿⡿⠋⠀⠀");
-        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣷⣄⠀⣀⣀⣻⣿⣏⣉⠀⠀⠀⠀");
-        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣦⡙⢿⣿⣿⣿⣿⣿⡷⠈⠙⠛⠛⠋⠁⠀⠀⠀⠀");
-        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣄⠙⢿⠿⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
-        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣿⣿⣿⣿⣿⡿⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
-        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣾⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
-        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⠿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
-        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⣿⣿⠟⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
-        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
-        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀Nero's Torch LatentSpace AMethodToMadness");
+        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀               ⠀");
+        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⣀⣀⣤⣴⡞⠀⠀⣀⣴⣿⠀⠀               ");
+        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⠿⣿⣿⢿⣿⣷⣶⣿⣿⣿⡟⠀⠀               ");
+        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⡏⠀⠈⠁⠘⠿⠟⠛⢉⣽⣿⠃⠀⠀               ");
+        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡘⠃⠀⠀⠀⠀⠀⠀⢰⣿⣿⣋⣀⡄⠀               ");
+        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣦⠀⠀⠀⠀⠀⣀⣬⣿⣿⡿⠋⠀⠀               ");
+        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣷⣄⠀⣀⣀⣻⣿⣏⣉⠀⠀⠀⠀               ");
+        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣦⡙⢿⣿⣿⣿⣿⣿⡷⠈⠙⠛⠛⠋⠁⠀⠀⠀⠀               ");
+        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣄⠙⢿⠿⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀               ");
+        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣿⣿⣿⣿⣿⡿⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀               ⠀");
+        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣾⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀               ⠀");
+        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⠿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀               ⠀");
+        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⣿⣿⠟⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀               ⠀");
+        print("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀               ");
+        print(" ")
+        print("        Nero's Torch LatentSpace AMethodToMadness             ");
+        print(" ")
+        print(" ")
 
         print("ALL YOUR SITE ARE BELONG TO US NOW!", header, "glitch");
         print("● ONLINE", header, "status");
@@ -112,7 +115,9 @@ function init() {
         i = 0;
       } else {
         width++;
-        print("▓".repeat(width), header);
+        let progressBar ="█".repeat(width).replace(/(.{5})/g,"$1 ")
+
+        print(progressBar, header);
         print(width + " %", header);
       }
     }
@@ -205,8 +210,15 @@ function processCommand(command) {
     print("Just kidding. You're still here.");
      print(" ");
   } else if (cmd === "cake") {
-    const audio = new Audio("audio/stillAlive.wav");
+    audio.src ="audio/stillAlive.mp3";
+    console.log(audio);
+     print("Please stand by ...");
+     setTimeout(()=>{
+        print("Playing audio ...")
+     },500)
+
     audio.play();
+
     var cakeSong = window.open("", 
         "_blank", 
         "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1000,height=1000"
@@ -215,9 +227,11 @@ function processCommand(command) {
     setTimeout(() => {
       cakeSong.close();
     }, 2000);
+
+    print("stop to stop audio");
 
   } else if (cmd === "no cake") {
-    const audio = new Audio("audio/noCake.wav");
+   audio.src ="audio/noCake.mp3";
     audio.play();
     var cakeSong = window.open("", 
         "_blank", 
@@ -227,6 +241,11 @@ function processCommand(command) {
     setTimeout(() => {
       cakeSong.close();
     }, 2000);
+     print("stop to stop audio");
+} else if (cmd === "stop") {
+    print("Stopping audio ...")
+    console.log(audio);
+        audio.pause();
 } else {
      print(" ");
     print("COMMAND NOT FOUND: " + command);
