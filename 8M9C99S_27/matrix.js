@@ -177,7 +177,7 @@ function processCommand(command) {
     print(" ");
     print("cake       - the cake is a lie");
     print("no cake    - the cake is not a lie");
-    print("david      - where is the cake?");
+    print("david      - Fluffy Spruce");
     print(" ");
 
   } else if (cmd === "clear") {
@@ -262,15 +262,41 @@ function processCommand(command) {
      } else if (cmd === "david") {
     audio.src = "audio/noCake.mp3";
     //audio.play();
+
+    const source = "https://www.youtube.com/watch?v=pVBUZ3NrHPE";
     var cakeSong = window.open(
       "",
-      "_blank",
+      "MsgWindow",
       "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1000,height=1000",
     );
+
+    let windowHTML =""; 
+ /*   windowHTML +="<!doctype html>"
+    windowHTML += '<html lang="en">'
+    windowHTML += '<head><meta charset="utf-8" /></head><body>' */
+    windowHTML+= "<div><h1>hello hsdnkajwngnwqrjignweqrg</h1>"
+    windowHTML +='<embed src="'
+    windowHTML+= source;
+    windowHTML+= '" />';
+ //   windowHTML+= '</body></html>'
+    windowHTML +="</div>"
+
+    windowHTML = '<embed id="embed" src="https://www.youtube.com/embed/pVBUZ3NrHPE?si=cLtHy3WX20NcgKA9" />'
+
+    windowHTML = '<iframe width="560" height="315" src="https://www.youtube.com/embed/pVBUZ3NrHPE?si=cLtHy3WX20NcgKA9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+    console.log(windowHTML);
+    console.log(cakeSong);
+
+    const meta = cakeSong.document.createElement("meta");
+    meta.name = "referrer";
+    meta.content = "strict-origin-when-cross-origin"
+    cakeSong.document.head.appendChild(meta);
+    cakeSong.document.body.innerHTML = windowHTML;
 
     setTimeout(() => {
       cakeSong.close();
     }, 2000);
+
     print("not implemented - yet");
     print(" ");
 
