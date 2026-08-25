@@ -20,6 +20,8 @@ body {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   height: 100%;
   color: #333;
+  font-size: var(--calcfs);
+  
 }
 
 
@@ -34,6 +36,7 @@ header {
   align-items: center;
   text-align: center;
   justify-content: left;
+  font-size-adjust: 1;
   /* position: fixed;
   z-index: 9999; */
 }
@@ -58,7 +61,7 @@ main {
   text-align: center;
   margin-left: var( --sidenavmargin);
   /* Same as the width of the sidebar */
-  height: 89dvh;
+  height: 90dvh;
 }
 
 main .content {
@@ -78,10 +81,6 @@ main .container {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   max-height: 50dvh;
   text-align: center;
-}
-
-.container p {
-  font-size: var( --calcfs);
 }
 
 .content img{
@@ -148,7 +147,8 @@ footer {
   color: white;
   text-align: center;
   padding: 2dvh;
-  height: 6dvh;
+  height: 5dvh;
+  font-size-adjust: 1.0;
   margin-left: var( --sidenavmargin);
 }
 

@@ -41,6 +41,10 @@
   height: var(--sidenavimgsize);
 }
 
+#logo{
+  margin: 2dvh;
+}
+
 .sidebar .content {
   display: flex;
   flex-direction: column;

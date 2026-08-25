@@ -177,9 +177,12 @@ function processCommand(command) {
     print(" ");
     print("cake       - the cake is a lie");
     print("no cake    - the cake is not a lie");
+    print("david      - where is the cake?");
     print(" ");
+
   } else if (cmd === "clear") {
     screen.innerHTML = "";
+
   } else if (cmd === "status") {
     print(" ");
     print("SYSTEM STATUS: ONLINE");
@@ -188,12 +191,14 @@ function processCommand(command) {
     print("NETWORK: ENCRYPTED");
     print("UPTIME: " + Math.floor(Math.random() * 9999) + " seconds");
     print(" ");
+
   } else if (cmd === "whoami") {
     print(" ");
     print("OPERATOR: Smarti");
     print("CLEARANCE: ██████████");
     print("IDENTITY: 0x8M9C99S");
     print(" ");
+
   } else if (cmd === "scan") {
     print(" ");
     print("INITIALIZING NETWORK SCAN...");
@@ -206,12 +211,14 @@ function processCommand(command) {
       print("SCAN COMPLETE.");
     }, 500);
     print(" ");
+
   } else if (cmd === "exit") {
     print(" ");
     print("SESSION TERMINATED.");
     print("...");
     print("Just kidding. You're still here.");
     print(" ");
+
   } else if (cmd === "cake") {
     audio.src = "audio/stillAlive.mp3";
     console.log(audio);
@@ -222,10 +229,13 @@ function processCommand(command) {
 
     audio.play();
 
-    var cakeSong = window.open(
-      "",
+    let source = "https://www.youtube.com/watch?v=Y6ljFaKRTrI";
+    let controls = "?autoplay=1&mute=1&controls=0&modestbranding=1&showinfo=0&rel=0";
+
+    const cakeSong = window.open(
+      "",//source, //+ controls,
       "_blank",
-      "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1000,height=1000",
+      "fullscreen=yes,titlebar=no,status=no,toolbar=no,scrollbars=no,resizable=no,top=500,left=500,width=1000,height=800"
     );
 
     setTimeout(() => {
@@ -248,6 +258,22 @@ function processCommand(command) {
     }, 2000);
     print("stop    - stop audio");
     print(" ");
+
+     } else if (cmd === "david") {
+    audio.src = "audio/noCake.mp3";
+    //audio.play();
+    var cakeSong = window.open(
+      "",
+      "_blank",
+      "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1000,height=1000",
+    );
+
+    setTimeout(() => {
+      cakeSong.close();
+    }, 2000);
+    print("not implemented - yet");
+    print(" ");
+
   } else if (cmd === "stop") {
     print(" ");
     print("Stopping audio ...");
