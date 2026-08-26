@@ -28,12 +28,14 @@ let distance = countdownDate - now;
 let days = Math.floor(distance / (1000 * 60 * 60 * 24));
 let weeks = Math.round(days / 7);
 
-let phaseNum = days - weeks * 7;
-
 if (weeks == 2) {
   embed.setAttribute("src","./8M9C99S_27/matrix.html");
 }
 
 if (weeks == 1) {
   embed.setAttribute("src","./8M9C99S_27/newBeginnings.html");
+}
+
+if (weeks == 0) {
+  embed.setAttribute("src","./8M9C99S_27/index.html");
 }

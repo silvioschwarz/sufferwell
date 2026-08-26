@@ -7,20 +7,10 @@
     <title>SufferWell</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="sidebar.css" />
+    <link rel="icon" type="image/png" sizes="32x32" href="logo/SufferWell.png"> 
   </head>
   <body>
-    <header>
-      <div class="brand">
-        <a href="index.html" target="_parent">SufferWell </a>
-      </div>
-      <!-- <div class="nav-links">
-					<a href="#">Home</a>
-					<a href="#features">Features</a>
-					<a href="#about">About</a>
-				</div> -->
-    </header>
-
-    <!-- Side navigation -->
+     <!-- Side navigation -->
     <div class="sidebar" id="myTopnav">
       <div class="blocker"></div>
       <div class="content">
@@ -40,6 +30,18 @@
       </div>
     </div>
 
+    <div id="content">
+    <header>
+      <div class="brand">
+        <a href="index.html" target="_parent">SufferWell </a>
+      </div>
+      <!-- <div class="nav-links">
+					<a href="#">Home</a>
+					<a href="#features">Features</a>
+					<a href="#about">About</a>
+				</div> -->
+    </header>
+
     <main>
       <embed id="embed" src="8M9C99S_27/index.html" />
     </main>
@@ -47,14 +49,26 @@
        <footer>
       <p>&copy; 2026 Sufferwell. All rights reserved.</p>
     </footer>
+    </div>
+<script type='text/javascript' > 
+  let countdownDate = new Date("Sep 8, 2026 7:59:59").getTime();
 
+  let now = new Date().getTime();
+  let distance = countdownDate - now;
 
-    <!-- <footer>
-		<div class="container">© <span id="year"></span> SufferWell — Built with care.</div>
-	</footer> -->
+  let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  let weeks = Math.floor(days / 7);
+  localStorage.setItem('Weeks', weeks);
+  localStorage.setItem("Distance", distance);
+  
+</script> 
   
     <!-- <script>document.getElementById('year').textContent=new Date().getFullYear()</script> -->
-    <script src="8M9C99S_27/app.js" type="module"></script>
+   
     <script src="app.js" type="module"></script>
+    <script src="/8M9C99S_27/app.js" type="module"></script>
   </body>
 </html>

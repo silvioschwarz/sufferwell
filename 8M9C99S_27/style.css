@@ -30,6 +30,14 @@ body{
     margin-left: 10dvw;
 }
 
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
 main .text {
     font-weight: bold;
     font-size: calc(1.1dvw + 1.1dvh + 1.1vmin);
@@ -62,10 +70,11 @@ canvas {
 
 button {
     font-size: calc(1.1dvw + 1.1dvh + 1.1vmin);
+    margin-top:30dvh;
     padding: 0.5rem 1rem;
     border: none;
     border-radius: 4px;
-    background-color: var(--primary-bg-color);
+    background-color: red;
     color: var(--primary-color);
     cursor: pointer;
     outline: var(--outline-size) dashed red;
