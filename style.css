@@ -10,8 +10,8 @@
   --card: #fff;
   --accent: #2b8aef;
   --muted: #6b7280;
-  --sidenavmargin: 15dvw;
-  --sidenavimgsize: 10dvw;
+  --sidenavmargin: 20dvw;
+  --sidenavimgsize: 8dvw;
   --calcfs: (1.1dvw + 1.1dvh + 1.1vmin);
 }
 
@@ -66,7 +66,7 @@ main {
   text-align: center;
   margin-left: var( --sidenavmargin);
   /* Same as the width of the sidebar */
-  height: 90dvh;
+  height: 88dvh;
 }
 
 main .content {
@@ -151,8 +151,8 @@ footer {
   background: #333;
   color: white;
   text-align: center;
-  padding: 2dvh;
-  height: 5dvh;
+  padding: 5dvh;
+  height: 7dvh;
   font-size-adjust: 0.75;
   margin-left: var( --sidenavmargin);
 }

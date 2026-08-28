@@ -18,47 +18,27 @@ h1 {
     text-align: center;
 }
 
-main {
-  padding: 5dvh 5dvw;
-  height: 90dvh;
-  gap: 2dvh;
-}
 
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin-left: var( --sidenavmargin);
-  /* Same as the width of the sidebar */
-  gap: 3dvh;
-  padding: 0dvh 10dvw;
-  height: 90dvh;
-}
 
-main .content {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 1dvw;
-}
-
-main .container {
-  display: flex;
+.container {
+    display: flex;
   flex-direction: column;
   background: white;
-  padding: 3dvh 5dvw;
+  padding: 5dvh 5dvw;
+  min-height: 75dvh;
+  max-width: 60dvw;
   border-radius: 15px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  max-height: 100dvh;
   text-align: center;
+  font-size: var(--calcfs);
+  font-size-adjust: 0.5;
 }
 
 
 .form-group {
     margin-bottom: 20px;
+    max-height: 20dvh;
+    
 }
 
 label {
@@ -66,6 +46,8 @@ label {
     margin-bottom: 8px;
     color: #555;
     font-weight: bold;
+      font-size: var(--calcfs);
+  font-size-adjust: 0.45;
 }
 
 
@@ -77,13 +59,15 @@ textarea {
     padding: 12px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    font-size: 14px;
+    font-size: var(--calcfs);
+  font-size-adjust: 0.5;
     font-family: Arial, sans-serif;
 }
 
 textarea {
     resize: vertical;
-    min-height: 150px;
+    max-height: 10dvh;
+    
 }
 
 input[type="text"]:focus,
@@ -99,11 +83,12 @@ button {
     background-color: #4CAF50;
     color: white;
     padding: 12px 30px;
+    margin: 2dvh ;
     border: none;
     border-radius: 4px;
-    font-size: 16px;
+        font-size: var(--calcfs);
+  font-size-adjust: 0.5;
     cursor: pointer;
-    width: 100%;
 }
 
 button:hover {
@@ -117,4 +102,5 @@ button:hover {
     border: none;
     border-radius: 4px;
     font-size: var(--calcfs);
+    font-size-adjust: 0.5;
 }
