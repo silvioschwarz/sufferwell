@@ -10,7 +10,7 @@
   --card: #fff;
   --accent: #2b8aef;
   --muted: #6b7280;
-  --sidenavmargin: 20dvw;
+  --sidenavmargin: 15dvw;
   --sidenavimgsize: 10dvw;
   --calcfs: (1.1dvw + 1.1dvh + 1.1vmin);
 }
@@ -137,7 +137,7 @@ h1 {
 
 embed {
   border: none;
-  width: 80dvw;
+  width: 100dvw;
   height: 90dvh;
   
 
