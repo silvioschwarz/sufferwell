@@ -1,79 +1,85 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Us</title>
-    <link rel="stylesheet" href="../style.css" />
-    <link rel="stylesheet" href="contact.css" />
-    <link rel="stylesheet" href="../sidebar.css" />
-  </head>
-  <body>
-    <header>
-      <div class="brand">
-        <a href="../index.html" target="_parent">SufferWell</a>
-      </div>
-      <!-- <div class="nav-links">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="contact.css" />
+  <link rel="stylesheet" href="../sidebar.css" />
+</head>
+
+<body>
+  <header>
+    <div class="brand">
+      <a href="../index.html" target="_parent">SufferWell</a>
+    </div>
+    <!-- <div class="nav-links">
 					<a href="#">Home</a>
 					<a href="#features">Features</a>
 					<a href="#about">About</a>
 				</div> -->
-    </header>
+  </header>
 
-     <!-- Side navigation -->
-    <div class="sidebar" id="myTopnav">
-      <div class="blocker"></div>
-      <div class="content">
-        <a href="../index.html" target="_parent">
-          <img id=logo
-            src="../logo/SufferWell.png"
-            alt="SufferWell Logo"
-          />
-        </a>
-        <a href="../subsites/about.html" target="_parent">About</a>
-        <a href="../subsites/latentspace.html" target="_parent">Latent Space</a>
-        <a href="../subsites/confounding-variables.html" target="_parent"
-          >Confounding Variables</a
-        >
-        <a href="../subsites/contact.html" target="_parent">Contact</a>
-        <!-- <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a> -->
+  <!-- Side navigation -->
+  <div class="sidebar" id="myTopnav">
+    <div class="blocker"></div>
+    <div class="content">
+      <a href="../index.html" target="_parent">
+        <img id=logo src="../logo/SufferWell.png" alt="SufferWell Logo" />
+      </a>
+      <a href="../subsites/about.html" target="_parent">About</a>
+      <a href="../subsites/latentspace.html" target="_parent">Latent Space</a>
+      <a href="../subsites/confounding-variables.html" target="_parent">Confounding Variables</a>
+      <a href="../subsites/contact.html" target="_parent">Contact</a>
+      <!-- <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a> -->
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <h1>Contact Us</h1>
+      <!-- <form action="welcome.php" method="post"> -->
+      <form>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <!-- Checkbox for accepting terms/privacy policy -->
+        <p class="form-group">
+          <input type="checkbox" id="terms" name="terms" required>
+          <label for="terms">I accept the <a href="terms.html">Terms of Service</a> and <a href="privacy.html">Privacy
+              Policy</a>.</label>
+        </p>
+        <button type="submit">
+          <a href="mailto:admin@sufferwell.online?subject=NeedHelp&body=IamineedofHelp!">
+          Send Message
+          </a> 
+        </button>
+      </form>
+
+      <div class="contact-info">
+        <h2>Other Ways to Reach Us</h2>
+        <p><strong>Email:</strong>
+          <a href="mailto:admin@sufferwell.online?subject=&body=">
+            admin@sufferwell.online
+          </a>
+        </p>
       </div>
     </div>
+  </main>
+  <footer>
+    <p>&copy; 2026 Sufferwell. All rights reserved.</p>
+  </footer>
+</body>
 
-    <main>
-      <div class="container">
-        <h1>Contact Us</h1>
-        <form>
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required />
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required />
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone" />
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required></textarea>
-          </div>
-          <button type="submit">
-            <a href="mailto:admin@sufferwell.online? cc=skywalker@starwars.com& bcc=leia@starwars.com& subject=&body=">Send Message</a>
-          </button>
-        </form>
-        <div class="contact-info">
-          <h2>Other Ways to Reach Us</h2>
-          <p><strong>Email:</strong> admin@sufferwell.online</p>
-          <p><strong>Phone:</strong> +1 (555) 123-4567</p>
-          <p><strong>Address:</strong> 123 Main Street, City, State 12345</p>
-        </div>
-      </div>
-    </main>
-    <footer>
-      <p>&copy; 2026 Sufferwell. All rights reserved.</p>
-    </footer>
-  </body>
 </html>

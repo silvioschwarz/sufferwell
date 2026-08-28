@@ -50,17 +50,17 @@ function countdownFunction() {
   let now = new Date().getTime();
   let distance = countdownDate - now;
   let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  let weeks = Math.floor(days / 7);
+  //let weeks = Math.floor(days / 7);
 
   let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-  //let weeks = localStorage.getItem("Weeks");
+  let weeks = localStorage.getItem("Weeks");
 
-  let phaseNum = days - weeks * 7;
+  let phaseNum = days - (weeks -1) * 7;
 
   if (phaseDiv) {
-    phaseDiv.innerHTML = "Phase " + (5 - weeks) + " of 6";
+    phaseDiv.innerHTML = "Phase " + (6 - weeks) + " of 6";
 
       countdownDiv.innerHTML =
         phaseNum + "d " + hours + "h " + minutes + "m " + seconds + "s ";
@@ -89,6 +89,8 @@ function countdownFunction() {
         console.error("Error pixelating image:", error);
       });
   }
+
+  distance = localStorage.getItem("Distance");
 
   if (distance < 0) {
     countdownDiv.innerHTML = "Happy Birthday";

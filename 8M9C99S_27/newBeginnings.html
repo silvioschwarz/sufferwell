@@ -1,66 +1,133 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>New Beginnings</title>
 
-    <style>
-      /* Google Fonts */
-      @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New Beginnings</title>
 
-      /* Global */
-      html {
-        min-height: 100%;
-        overflow: hidden;
-      }
-      body {
-        height: calc(100vh - 8em);
-        padding: 4em;
-        color: rgba(255, 255, 255, 0.75);
-        font-family: "Anonymous Pro", monospace;
-        background-color: rgb(25, 25, 25);
-      }
-      .line-1 {
-        position: relative;
-        top: 50%;
-        width: 10em;
-        margin: 0 auto;
-        border-right: 2px solid rgba(255, 255, 255, 0.75);
-        font-size: 180%;
-        text-align: center;
-        white-space: nowrap;
-        overflow: hidden;
-        transform: translateY(-50%);
+  <style>
+    /* Google Fonts */
+    @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+
+    /* Global */
+    html {
+      min-height: 100%;
+      overflow: hidden;
+    }
+
+    body {
+      height: calc(100vh - 8em);
+      padding: 4em;
+      color: rgba(255, 255, 255, 0.75);
+      font-family: "Anonymous Pro", monospace;
+      background-color: rgb(25, 25, 25);
+    }
+
+    #container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      height: 90dvh;
+      justify-content: space-between;
+    }
+
+    .line-1 {
+      position: relative;
+      top: 50%;
+      width: 15em;
+      margin: 0 auto;
+      border-right: 2px solid rgba(255, 255, 255, 0.75);
+      font-size: 180%;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      transform: translateY(-50%);
+    }
+
+    button {
+      width: 20dvw;
+      height: 5dvh;
+      border-radius: 4px;
+      font-size: 1.5em;
+      background-color: antiquewhite;
+      cursor: pointer;
+    }
+
+    /* Animation */
+    .anim-typewriter {
+      animation:
+        typewriter 4s steps(44) 3s 1 normal both,
+        blinkTextCursor 500ms steps(44) infinite normal;
+    }
+
+    @keyframes typewriter {
+      from {
+        width: 0;
       }
 
-      /* Animation */
-      .anim-typewriter {
-        animation:
-          typewriter 4s steps(44) 3s 1 normal both,
-          blinkTextCursor 500ms steps(44) infinite normal;
+      to {
+        width: 30em;
       }
-      @keyframes typewriter {
-        from {
-          width: 0;
-        }
-        to {
-          width: 12em;
-        }
+    }
+
+    @keyframes blinkTextCursor {
+      from {
+        border-right-color: rgba(255, 255, 255, 0.75);
       }
-      @keyframes blinkTextCursor {
-        from {
-          border-right-color: rgba(255, 255, 255, 0.75);
-        }
-        to {
-          border-right-color: transparent;
-        }
+
+      to {
+        border-right-color: transparent;
       }
-    </style>
-  </head>
-  <body>
-    <p class="line-1 anim-typewriter">
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <p id="mainText" class="line-1 anim-typewriter">
       Do you like waiting?
     </p>
-  </body>
+    <button id="unmuteButton"></button>
+    <audio id="audio">
+      <source src="audio/Jeopardy.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+</body>
+<script>
+  const unmuteButton = document.getElementById("unmuteButton");
+  const mainText = document.getElementById("mainText");
+
+  
+
+  setTimeout(()=>{
+    unmuteButton.innerHTML="Stop the waiting!"
+  }, 7000)
+
+  let clicks = 0;
+
+  unmuteButton.addEventListener('click', function () {
+    clicks += 1;
+
+    if (clicks == 1) {
+      mainText.innerHTML = "Are you sure?"
+      mainText.classList.remove("anim-typewriter");
+      void mainText.offsetWidth; 
+      mainText.classList.add("anim-typewriter");
+      unmuteButton.innerHTML = "Yes!";
+    }
+
+    if (clicks == 2) {
+      mainText.innerHTML = "5 more hours have been added to your waiting period ...";
+      unmuteButton.innerHTML = "For fuck's sake!";
+      audio.muted = false;
+      audio.src = "audio/Jeopardy.mp3";
+      audio.play();
+    }
+  });
+</script>
+
 </html>

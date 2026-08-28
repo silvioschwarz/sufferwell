@@ -52,15 +52,11 @@
     </div>
 <script type='text/javascript' > 
   let countdownDate = new Date("Sep 8, 2026 7:59:59").getTime();
-
   let now = new Date().getTime();
   let distance = countdownDate - now;
-
   let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-  let weeks = Math.floor(days / 7);
+  let weeks = Math.ceil(days / 7);
+
   localStorage.setItem('Weeks', weeks);
   localStorage.setItem("Distance", distance);
   

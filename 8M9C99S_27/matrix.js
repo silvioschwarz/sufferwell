@@ -91,7 +91,7 @@ function init() {
         print(" ⠠⣿⣿⠟⠋⠁                        ");
         print("⠀⠉⠁                            ");
         print(" ");
-        print("Nero's Torch LatentSpace AMethodToMadness     ");
+        print("Nero's Torch LatentSpace AMethodForMadness     ");
         print(" ");
         print(" ");
 
@@ -178,6 +178,11 @@ function processCommand(command) {
     print("cake       - the cake is a lie");
     print("no cake    - the cake is not a lie");
     print("david      - Fluffy Spruce");
+    print("superman   - Supermann?");
+    print("loriot     - Pelzig?");
+    print("pirol      - du Guter");
+    print("phase      - how long till next phase")
+    print("countdown  - how long till 27")
     print(" ");
 
   } else if (cmd === "clear") {
@@ -259,52 +264,68 @@ function processCommand(command) {
     print("stop    - stop audio");
     print(" ");
 
-     } else if (cmd === "david") {
-    audio.src = "audio/noCake.mp3";
-    //audio.play();
-
-    const source = "https://www.youtube.com/watch?v=pVBUZ3NrHPE";
-    var cakeSong = window.open(
-      "",
-      "MsgWindow",
-      "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1000,height=1000",
-    );
-
-    let windowHTML =""; 
- /*   windowHTML +="<!doctype html>"
-    windowHTML += '<html lang="en">'
-    windowHTML += '<head><meta charset="utf-8" /></head><body>' */
-    windowHTML+= "<div><h1>hello hsdnkajwngnwqrjignweqrg</h1>"
-    windowHTML +='<embed src="'
-    windowHTML+= source;
-    windowHTML+= '" />';
- //   windowHTML+= '</body></html>'
-    windowHTML +="</div>"
-
-    windowHTML = '<embed id="embed" src="https://www.youtube.com/embed/pVBUZ3NrHPE?si=cLtHy3WX20NcgKA9" />'
-
-    windowHTML = '<iframe width="560" height="315" src="https://www.youtube.com/embed/pVBUZ3NrHPE?si=cLtHy3WX20NcgKA9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
-    console.log(windowHTML);
-    console.log(cakeSong);
-
-    const meta = cakeSong.document.createElement("meta");
-    meta.name = "referrer";
-    meta.content = "strict-origin-when-cross-origin"
-    cakeSong.document.head.appendChild(meta);
-    cakeSong.document.body.innerHTML = windowHTML;
-
-    setTimeout(() => {
-      cakeSong.close();
-    }, 2000);
-
-    print("not implemented - yet");
+     } else if (cmd === "loriot") {
+    audio.src = "audio/Vogelspinne.mp3";
+    audio.play();
+    print("stop    - stop audio");
     print(" ");
-
+    } else if (cmd === "pirol") {
+    audio.src = "audio/duGuter.mp3";
+    audio.play();
+    print("stop    - stop audio");
+    print(" ");
+    } else if (cmd === "superman") {
+    audio.src = "audio/MidNM.mp3";
+    audio.play();
+    print("stop    - stop audio");
+    print(" ");
   } else if (cmd === "stop") {
     print(" ");
     print("Stopping audio ...");
     print(" ");
     audio.pause();
+    } else if (cmd === "phase") {
+
+      let countdownDate = new Date("Sep 8, 2026 7:59:59").getTime();
+  let now = new Date().getTime();
+  let distance = countdownDate - now;
+  let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  let weeks = localStorage.getItem("Weeks");
+
+  let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  let phaseNum = days - (weeks -1) * 7;
+
+  let phaseText = "Phase " + (6 - weeks) + " of 6";
+  let phaseTime = phaseNum + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+    print(" ");
+    print(phaseText);
+    print(" ");
+    print(phaseTime);
+    print(" ");
+    } else if (cmd === "countdown") {
+      let countdownDate = new Date("Sep 8, 2026 7:59:59").getTime();
+  let now = new Date().getTime();
+  let distance = countdownDate - now;
+  let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+  let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+
+  let countdownText =  days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+    print(" ");
+    print(countdownText);
+    print(" ");
+
+    //audio.src = "audio/Jeopardy.mp3";
+    //audio.play();
+    
   } else {
     print(" ");
     print("COMMAND NOT FOUND: " + command);
@@ -312,3 +333,5 @@ function processCommand(command) {
     print(" ");
   }
 }
+
+
