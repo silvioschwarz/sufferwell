@@ -37,7 +37,7 @@
         position:relative;
         margin: 10dvh 20dvw;
         z-index: 2;
-        max-width: 60dvw; /*min(900px, 90dvw);*/
+        width: 60dvw; /*min(900px, 90dvw);*/
         height: 80dvh;
         background: rgba(0, 10, 3, 0.88);
         border: 1px solid #00ff41;
@@ -57,6 +57,7 @@
         text-shadow: 0 0 8px #00ff41;
         display: flex;
         justify-content: space-between;
+        font-size-adjust: 0.25;
 
     }
 
@@ -76,6 +77,7 @@
 
     .status {
         color: #00ff41;
+        font-size-adjust: 0.5;
     }
 
 

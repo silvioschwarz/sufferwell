@@ -72,6 +72,16 @@ setTimeout(()=>{
   enter.innerHTML = "Clicky clicky";
 },7000)
 
+audio.addEventListener('ended', function() {
+  console.log(this);
+    this.pause();
+  this.src="audio/Portal OST - Radio Loop.mp3";
+
+  this.play();
+
+      }
+  );
+
 enter.addEventListener("click", ()=>{
 
   enter.style.display = 'none';
@@ -83,15 +93,15 @@ enter.addEventListener("click", ()=>{
       print("Playing audio ...");
       audio.play();},500);
 
-      audio.addEventListener('ended', function() {
-    this.currentTime = 0;
-    this.play();
+      const toId = setTimeout(init, 2000);
+
+      
 }, false);
 
-const toId = setTimeout(init, 2000);
 
-    }, {once:true}
-  );
+
+
+    
 
 function init() {
 
@@ -105,7 +115,10 @@ function init() {
 
     function frame() {
       header.innerHTML = "";
+      screen.innerHTML="";
+
       if (width >= 100) {
+        header.style.fontSizeAdjust = 0.5;
         clearInterval(id);
         setTimeout(()=>{print("                              ⢀  ");},100);
         setTimeout(()=>{print("                ⣴⣿⣀⣀⣤⣴⡞⠀⠀⣀⣴⣿  ");},200);
@@ -125,6 +138,10 @@ function init() {
         setTimeout(()=>{print("Nero's Torch LatentSpace AMethodForMadness     ");},1600);
         setTimeout(()=>{print(" ");},1700);
         setTimeout(()=>{print(" ");},1800);
+
+        setTimeout(()=>{
+          screen.innerHTML="";
+        },3000);
 
         print("ALL YOUR SITE ARE BELONG TO US NOW!", header, "glitch");
         print("● ONLINE", header, "status");
@@ -152,7 +169,8 @@ function init() {
         let progressBar = "█".repeat(width).replace(/(.{5})/g, "$1 ");
 
         print(progressBar, header);
-        print(width + " %", header);
+        print(width + " %", header, "status");
+
       }
     }
   }
@@ -199,9 +217,10 @@ function processCommand(command) {
     print("------------------");
     print("help       - show this message");
     print("clear      - clear terminal");
-    print("status     - system status");
     print("whoami     - identify operator");
+    print("stop       - stop audio from playing");
     print("------------------");
+    print("silvio     - try 'vlissy'");
     print("cake       - the cake is a lie");
     print("no cake    - the cake is not a lie");
     print("david      - Fluffy Spruce");
@@ -215,14 +234,30 @@ function processCommand(command) {
   } else if (cmd === "clear") {
     screen.innerHTML = "";
 
-  } else if (cmd === "status") {
+  } else if (cmd === "silvio") {
+      print("");
+      print("Try 'vlissy'")
+      print("");
+      } else if (cmd === "vlissy") {
+         print("");
+      print("You've uncovered my secret identity. Congratulations!")
+      print("");
+
+      } else if (cmd === "david") {
+      print("");
+      let source = "https://www.youtube.com/watch?v=8K6gNz0qMTA";
+      var cakeSong = window.open(
+      source,
+      "_blank",
+      "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=1000,height=1000",
+    );
+
+    setTimeout(() => {
+      cakeSong.close();
+    }, 2000);
+    print("stop    - stop audio");
     print(" ");
-    print("SYSTEM STATUS: ONLINE");
-    print("CPU: " + Math.floor(Math.random() * 40 + 20) + "%");
-    print("MEMORY: " + Math.floor(Math.random() * 50 + 30) + "%");
-    print("NETWORK: ENCRYPTED");
-    print("UPTIME: " + Math.floor(Math.random() * 9999) + " seconds");
-    print(" ");
+      print("");
 
   } else if (cmd === "whoami") {
     print(" ");
@@ -259,6 +294,7 @@ function processCommand(command) {
   } else if (cmd === "no cake") {
     audio.src = "audio/noCake.mp3";
     audio.play();
+    
     var cakeSong = window.open(
       "",
       "_blank",
