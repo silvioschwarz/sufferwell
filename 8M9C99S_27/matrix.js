@@ -59,12 +59,32 @@ const input = document.getElementById("command");
 const screen = document.getElementById("screen");
 const header = document.getElementById("header");
 const title = document.getElementById("title");
+const enter = document.getElementById("enter");
 
 const audio = document.getElementById("audio");
 
 const toId = setTimeout(init, 2000);
 
+enter.addEventListener("click", ()=>{
+
+  enter.style.display = 'none';
+  audio.src = "audio/Portal OST - Radio Loop.mp3";
+    console.log(audio);
+    print("Please stand by ...");
+
+     setTimeout(() => {
+      print("Playing audio ...");
+      audio.play();},500);
+
+      audio.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+}, false);
+
+    }, {once:true});
+
 function init() {
+
   var i = 0;
 
   if (i == 0) {

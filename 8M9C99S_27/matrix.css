@@ -60,6 +60,20 @@
 
     }
 
+    #enter{
+         position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 3;
+        background-color: antiquewhite;
+        height: 100%;
+        width: 100%;
+        font-size: var(--calcfs);
+        font-weight: bold;
+        font-size-adjust: 1;
+
+    }
+
     .status {
         color: #00ff41;
     }
