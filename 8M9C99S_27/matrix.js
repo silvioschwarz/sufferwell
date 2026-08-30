@@ -63,7 +63,14 @@ const enter = document.getElementById("enter");
 
 const audio = document.getElementById("audio");
 
-const toId = setTimeout(init, 2000);
+
+setTimeout(()=>{
+  enter.innerHTML = "(You need to click.)";
+},4000)
+
+setTimeout(()=>{
+  enter.innerHTML = "Clicky clicky";
+},7000)
 
 enter.addEventListener("click", ()=>{
 
@@ -81,7 +88,10 @@ enter.addEventListener("click", ()=>{
     this.play();
 }, false);
 
-    }, {once:true});
+const toId = setTimeout(init, 2000);
+
+    }, {once:true}
+  );
 
 function init() {
 
@@ -89,6 +99,7 @@ function init() {
 
   if (i == 0) {
     i = 1;
+
     var width = 0;
     var id = setInterval(frame, 100);
 
@@ -96,24 +107,24 @@ function init() {
       header.innerHTML = "";
       if (width >= 100) {
         clearInterval(id);
-        print("                              ⢀  ");
-        print("                ⣴⣿⣀⣀⣤⣴⡞⠀⠀⣀⣴⣿  ");
-        print("               ⣸⣿⠿⣿⣿⢿⣿⣷⣶⣿⣿⣿⡟⠀");
-        print("               ⣿⡏⠀⠈⠁⠘⠿⠟⠛⢉⣽⣿⠃  ");
-        print("              ⣠⡘⠃⠀⠀⠀⠀⠀⠀⢰⣿⣿⣋⣀⡄ ");
-        print("            ⣠⣾⣿⣿⣦⠀⠀⠀⠀⠀⣀⣬⣿⣿⡿⠋  ");
-        print("            ⣿⣿⣿⣿⣿⣷⣄⠀⣀⣀⣻⣿⣏⣉    ");
-        print("         ⢀⣴⣦⡙⢿⣿⣿⣿⣿⣿⡷⠈⠙⠛⠛⠋⠁   ");
-        print("       ⢀⣴⣿⣿⣿⣿⣄⠙⢿⠿⠛⠁           ");
-        print("      ⣠⣿⣿⣿⣿⣿⡿⠛⠁                ");
-        print("    ⢠⣾⣿⣿⣿⣿⠟⠁                  ");
-        print("  ⢀⣴⣿⣿⣿⠿⠋                     ");
-        print(" ⠠⣿⣿⠟⠋⠁                        ");
-        print("⠀⠉⠁                            ");
-        print(" ");
-        print("Nero's Torch LatentSpace AMethodForMadness     ");
-        print(" ");
-        print(" ");
+        setTimeout(()=>{print("                              ⢀  ");},100);
+        setTimeout(()=>{print("                ⣴⣿⣀⣀⣤⣴⡞⠀⠀⣀⣴⣿  ");},200);
+        setTimeout(()=>{print("               ⣸⣿⠿⣿⣿⢿⣿⣷⣶⣿⣿⣿⡟⠀");},300);
+        setTimeout(()=>{print("               ⣿⡏⠀⠈⠁⠘⠿⠟⠛⢉⣽⣿⠃  ");},400);
+        setTimeout(()=>{print("              ⣠⡘⠃⠀⠀⠀⠀⠀⠀⢰⣿⣿⣋⣀⡄ ");},500);
+        setTimeout(()=>{print("            ⣠⣾⣿⣿⣦⠀⠀⠀⠀⠀⣀⣬⣿⣿⡿⠋  ");},600);
+        setTimeout(()=>{print("            ⣿⣿⣿⣿⣿⣷⣄⠀⣀⣀⣻⣿⣏⣉    ");},700);
+        setTimeout(()=>{print("         ⢀⣴⣦⡙⢿⣿⣿⣿⣿⣿⡷⠈⠙⠛⠛⠋⠁   ");},800);
+        setTimeout(()=>{print("       ⢀⣴⣿⣿⣿⣿⣄⠙⢿⠿⠛⠁           ");},900);
+        setTimeout(()=>{print("      ⣠⣿⣿⣿⣿⣿⡿⠛⠁                ");},1000);
+        setTimeout(()=>{print("    ⢠⣾⣿⣿⣿⣿⠟⠁                  ");},1100);
+        setTimeout(()=>{print("  ⢀⣴⣿⣿⣿⠿⠋                     ");},1200);
+        setTimeout(()=>{print(" ⠠⣿⣿⠟⠋⠁                        ");},1300);
+        setTimeout(()=>{print("⠀⠉⠁                            ");},1400);
+        setTimeout(()=>{print(" ");},1500);
+        setTimeout(()=>{print("Nero's Torch LatentSpace AMethodForMadness     ");},1600);
+        setTimeout(()=>{print(" ");},1700);
+        setTimeout(()=>{print(" ");},1800);
 
         print("ALL YOUR SITE ARE BELONG TO US NOW!", header, "glitch");
         print("● ONLINE", header, "status");
@@ -190,11 +201,7 @@ function processCommand(command) {
     print("clear      - clear terminal");
     print("status     - system status");
     print("whoami     - identify operator");
-    print("scan       - scan network");
-    print("exit       - terminate session");
-    print(" ");
     print("------------------");
-    print(" ");
     print("cake       - the cake is a lie");
     print("no cake    - the cake is not a lie");
     print("david      - Fluffy Spruce");
@@ -222,26 +229,6 @@ function processCommand(command) {
     print("OPERATOR: Smarti");
     print("CLEARANCE: ██████████");
     print("IDENTITY: 0x8M9C99S");
-    print(" ");
-
-  } else if (cmd === "scan") {
-    print(" ");
-    print("INITIALIZING NETWORK SCAN...");
-
-    setTimeout(() => {
-      print("NODE_01 ........ ONLINE");
-      print("NODE_02 ........ ONLINE");
-      print("NODE_03 ........ UNKNOWN");
-      print("NODE_04 ........ ENCRYPTED");
-      print("SCAN COMPLETE.");
-    }, 500);
-    print(" ");
-
-  } else if (cmd === "exit") {
-    print(" ");
-    print("SESSION TERMINATED.");
-    print("...");
-    print("Just kidding. You're still here.");
     print(" ");
 
   } else if (cmd === "cake") {
