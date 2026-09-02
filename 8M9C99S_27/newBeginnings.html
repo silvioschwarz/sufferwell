@@ -17,7 +17,10 @@
     }
 
     body {
-      height: calc(100vh - 8em);
+      height: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
       padding: 4em;
       color: rgba(255, 255, 255, 0.75);
       font-family: "Anonymous Pro", monospace;
@@ -29,14 +32,18 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      height: 90dvh;
-      justify-content: space-between;
+      margin-top: 20dvh;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      gap: 30dvh;
     }
 
     .line-1 {
       position: relative;
       top: 50%;
-      width: 50ex;
+      width: calc(1dvh + 1dvw);
       margin: 0 auto;
       border-right: 2px solid rgba(255, 255, 255, 0.75);
       font-size: calc(2dvh + 2dvw);
@@ -50,9 +57,11 @@
       width: 50dvw;
       height: 10dvh;
       border-radius: 40px;
-      font-size: 300%;
+      font-size: calc(2dvh + 2dvw);
       background-color: antiquewhite;
       cursor: pointer;
+      align-items: center;
+      text-align: center;
     }
 
     /* Animation */
@@ -68,7 +77,7 @@
       }
 
       to {
-        width: 50ex;
+        width: calc(40*(1dvh + 1dvw));
       }
     }
 
@@ -122,12 +131,12 @@
       setTimeout(()=>{
     unmuteButton.style.display = "block";
     unmuteButton.innerHTML="Stop the waiting!"
-  }, 7000)
+  }, 5000)
       unmuteButton.innerHTML = "Yes!";
     }
 
-    if (clicks == 2) {
-      mainText.innerHTML ="This will reset your waiting period.";
+    else if (clicks == 2) {
+      mainText.innerHTML ="This will reset"+ "<br><br>"+ "your waiting period.";
       mainText.classList.remove("anim-typewriter");
       void mainText.offsetWidth; 
       mainText.classList.add("anim-typewriter");
@@ -138,15 +147,16 @@
   }, 7000);
 
     }
-
-    if (clicks > 2) {
-      let txt = "5 more hours have been" + "<br><br>"+" added to your waiting period ...";
-      mainText.innerHTML += "<br><br>" + txt;
+else {
+      let txt = mainText.innerHTML;
+      txt += "<br>" + "5 more hours";
+      mainText.innerHTML = txt ;
       unmuteButton.innerHTML = "For fuck's sake!";
       audio.muted = false;
       audio.src = "audio/Jeopardy.mp3";
       audio.play();
     }
+
   });
 </script>
 
