@@ -36,21 +36,21 @@
     .line-1 {
       position: relative;
       top: 50%;
-      width: 15em;
+      width: 50ex;
       margin: 0 auto;
       border-right: 2px solid rgba(255, 255, 255, 0.75);
-      font-size: 180%;
+      font-size: calc(2dvh + 2dvw);
       text-align: center;
-      white-space: nowrap;
       overflow: hidden;
-      transform: translateY(-50%);
+      white-space: nowrap;
     }
 
     button {
-      width: 20dvw;
-      height: 5dvh;
-      border-radius: 4px;
-      font-size: 1.5em;
+      display: none;
+      width: 50dvw;
+      height: 10dvh;
+      border-radius: 40px;
+      font-size: 300%;
       background-color: antiquewhite;
       cursor: pointer;
     }
@@ -58,8 +58,8 @@
     /* Animation */
     .anim-typewriter {
       animation:
-        typewriter 4s steps(44) 3s 1 normal both,
-        blinkTextCursor 500ms steps(44) infinite normal;
+        typewriter 2s steps(94) 3s 1 normal both,
+        blinkTextCursor 500ms steps(94) infinite normal;
     }
 
     @keyframes typewriter {
@@ -68,7 +68,7 @@
       }
 
       to {
-        width: 30em;
+        width: 50ex;
       }
     }
 
@@ -104,8 +104,9 @@
   
 
   setTimeout(()=>{
-    unmuteButton.innerHTML="Stop the waiting!"
-  }, 7000)
+    unmuteButton.style.display = "block";
+    unmuteButton.innerHTML="NO?"
+  }, 10000)
 
   let clicks = 0;
 
@@ -117,11 +118,30 @@
       mainText.classList.remove("anim-typewriter");
       void mainText.offsetWidth; 
       mainText.classList.add("anim-typewriter");
+      unmuteButton.style.display = "none";
+      setTimeout(()=>{
+    unmuteButton.style.display = "block";
+    unmuteButton.innerHTML="Stop the waiting!"
+  }, 7000)
       unmuteButton.innerHTML = "Yes!";
     }
 
     if (clicks == 2) {
-      mainText.innerHTML = "5 more hours have been added to your waiting period ...";
+      mainText.innerHTML ="This will reset your waiting period.";
+      mainText.classList.remove("anim-typewriter");
+      void mainText.offsetWidth; 
+      mainText.classList.add("anim-typewriter");
+      unmuteButton.style.display = "none";
+      setTimeout(()=>{
+    unmuteButton.style.display = "block";
+      unmuteButton.innerHTML = "For fuck's sake!";
+  }, 7000);
+
+    }
+
+    if (clicks > 2) {
+      let txt = "5 more hours have been" + "<br><br>"+" added to your waiting period ...";
+      mainText.innerHTML += "<br><br>" + txt;
       unmuteButton.innerHTML = "For fuck's sake!";
       audio.muted = false;
       audio.src = "audio/Jeopardy.mp3";

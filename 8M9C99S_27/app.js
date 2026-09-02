@@ -48,7 +48,8 @@ playVideo?.addEventListener("click", function () {
 function countdownFunction() {
   let countdownDate = new Date("Sep 8, 2026 7:59:59").getTime();
   let now = new Date().getTime();
-  let distance = countdownDate - now;
+  let distance = localStorage.getItem("Distance");
+  //let distance = countdownDate - now;
   let days = Math.floor(distance / (1000 * 60 * 60 * 24));
   //let weeks = Math.floor(days / 7);
 
@@ -90,7 +91,7 @@ function countdownFunction() {
       });
   }
 
-  distance = localStorage.getItem("Distance");
+  
 
   if (distance < 0) {
     countdownDiv.innerHTML = "Happy Birthday";
