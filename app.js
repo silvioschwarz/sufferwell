@@ -45,14 +45,17 @@ if (weeks == 0) {
     btn.style.display = "block";
 
   btn.addEventListener("click", function () {
+      audio.src = "8M9C99S_27/audio/marthy.mp3";
+  audio.controls = false;
+  audio.play();
+
+
+    /*
     audio.src = "8M9C99S_27/audio/Jeopardy.mp3";
     audio.play();
     audio.loop=true;
+    */
     btn.style.display = "none";
   });
 }
 
-if (distance < 0) {
-  btn.style.display = "none";
-   embed.setAttribute("src","./8M9C99S_27/index.html");
-}

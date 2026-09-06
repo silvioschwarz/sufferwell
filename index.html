@@ -60,7 +60,9 @@
   let distance = countdownDate - now;
   let days = Math.floor(distance / (1000 * 60 * 60 * 24));
   let weeks = Math.ceil(days / 7);
-
+ 
+  weeks = 0;
+  distance = -12;
   localStorage.setItem('Weeks', weeks);
   localStorage.setItem("Distance", distance);
   

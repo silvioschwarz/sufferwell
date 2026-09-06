@@ -16,7 +16,7 @@ const main = document.getElementById("main");
 
 playVideo?.addEventListener("click", function () {
   var video = document.createElement("video");
-  video.src = "img/8M9C9S27.mp4";
+  video.src = "video/8M9C99S_27.mp4";
   video.controls = true;
   video.autoplay = true;
   video.muted = true;
@@ -25,14 +25,17 @@ playVideo?.addEventListener("click", function () {
   video.style.maxWidth = "100dvw";
   video.style.maxHeight = "70dvh";
 
+  
   var audio = document.createElement("audio");
-  audio.src = "audio/sub_clair-happy-birthday-578363.mp3";
+   /*
+  audio.src = "audio/marthy.mp3";
   audio.controls = true;
 
   audio.play();
+*/
+  var audioText = 'Music by Fluffy Spruce and LatentSpace';
 
-  var audioText =
-    'Music by <a href="https://pixabay.com/de/users/sub_clair-55456531/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=578363">Sub_Clair</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=578363">Pixabay</a>';
+  //  'Music by <a href="https://pixabay.com/de/users/sub_clair-55456531/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=578363">Sub_Clair</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=578363">Pixabay</a>';
   var textAudio = document.createElement("div");
   textAudio.classList.add("txtaudio");
   textAudio.innerHTML = audioText;
