@@ -33,7 +33,7 @@ playVideo?.addEventListener("click", function () {
 
   audio.play();
 */
-  var audioText = 'Music by Fluffy Spruce and LatentSpace';
+  var audioText = '<h1>Music by Fluffy Spruce and LatentSpace</h1>';
 
   //  'Music by <a href="https://pixabay.com/de/users/sub_clair-55456531/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=578363">Sub_Clair</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=578363">Pixabay</a>';
   var textAudio = document.createElement("div");
