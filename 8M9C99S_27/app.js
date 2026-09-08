@@ -110,7 +110,7 @@ function countdownFunction() {
     for (let i = 0; i < 4; i++) {
       const tempElement = document.createElement("div");
       tempElement.classList.toggle("firework");
-      tempElement.innerHTML = i + 1;
+      tempElement.innerHTML = " ";
       fireworkContainer.appendChild(tempElement);
     }
   }
