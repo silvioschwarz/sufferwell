@@ -7,6 +7,7 @@
     <title>SufferWell</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="sidebar.css" />
+
     <link rel="icon" type="image/png" sizes="32x32" href="logo/SufferWell.png"> 
   </head>
   <body>
@@ -31,6 +32,7 @@
     </div>
 
     <div id="content">
+      
     <header>
       <div class="brand">
         <a href="index.html" target="_parent">SufferWell </a>
@@ -42,9 +44,32 @@
 				</div> -->
     </header>
 
+			
+
     <main>
+      <!-- <canvas id="wheel-of-fortune" width="800" height="800"></canvas> -->
+			<div id="top-number">6</div>
+
+    <form onchange="myFunction(event)">
+  <label for="cars">Choose a Phase:</label>
+  <select name="cars" id="cars">
+    <optgroup label="Swedish Cars">
+      <option value="6" selected>6</option>
+      <option value="5">5</option>
+    </optgroup>
+    <optgroup label="German Cars">
+      <option value="4">4</option>
+      <option value="3">3</option>
+      <option value="2">2</option>
+      <option value="1">1</option>
+      <option value="0">0</option>
+    </optgroup>
+  </select>
+</form>
+      
       <embed id="embed" src="8M9C99S_27/index.html" />
     </main>
+   
     <audio id="audio">
         <source src="8M9C99S_27/audio/duGuter.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
@@ -59,13 +84,63 @@
   let now = new Date().getTime();
   let distance = countdownDate - now;
   let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  let weeks = Math.ceil(days / 7);
+  let weeks = 1;//Math.ceil(days / 7);
+  const embed = document.getElementById("embed");
+const audio = document.getElementById("audio");
+const btn = document.getElementById("enter");
 
-  distance = -1;
-  localStorage.setItem('Weeks', weeks);
+
+  let phases = 6;
+
+  localStorage.setItem("Weeks", weeks);
+
   localStorage.setItem("Distance", distance);
+  localStorage.setItem("Phases", phases);
+
+  function myFunction(e) {
+
+    let topNumber = 6- e.target.value;
+    localStorage.setItem("Weeks", topNumber);
+
+
+    console.log("Selected Phase: " + topNumber);
+    document.getElementById("top-number").innerHTML = topNumber;
+
+    if (topNumber > "2") {
+      embed.setAttribute("src", "./8M9C99S_27/index.html");
+    }
+
+
+  if (topNumber == "2") {
+    embed.setAttribute("src", "./8M9C99S_27/matrix.html");
+  }
+
+  if (topNumber == "1") {
+    embed.setAttribute("src", "./8M9C99S_27/newBeginnings.html");
+  }
+
+  if (topNumber == "0") {
+    embed.setAttribute("src", "./8M9C99S_27/index.html");
+    btn.style.display = "block";
+
+    btn.addEventListener("click", function () {
+      audio.src = "8M9C99S_27/audio/8M9C99S_27.mp3";
+      audio.controls = false;
+      audio.play();
+
+      /*
+    audio.src = "8M9C99S_27/audio/Jeopardy.mp3";
+    audio.play();
+    audio.loop=true;
+    */
+      btn.style.display = "none";
+    });
+  }
+}
+
   
 </script> 
+
   
     <!-- <script>document.getElementById('year').textContent=new Date().getFullYear()</script> -->
    

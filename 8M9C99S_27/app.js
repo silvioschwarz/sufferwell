@@ -74,37 +74,33 @@ function countdownFunction() {
       countdownDiv2.innerHTML =
         days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
 
-    let pixImg1 = pixelatePicture("./img/Bird.jpg", weeks*265);
-    let pixImg2 = pixelatePicture("./img/Finger.jpg", weeks*256);
+    var pixImg1 = pixelatePicture("./img/Bird.jpg", weeks*265);
+    var pixImg2 = pixelatePicture("./img/Finger.jpg", weeks*256);
 
-    pixImg1
-      .then((canvas) => {
+    Promise.all([pixImg1, pixImg2])
+      .then(([canvas1, canvas2]) => {
         img1Div.innerHTML = "";
-        img1Div.appendChild(canvas);
-      })
-      .catch((error) => {
-        console.error("Error pixelating image:", error);
-      });
+        img1Div.appendChild(canvas1);
 
-    pixImg2
-      .then((canvas) => {
         img2Div.innerHTML = "";
-        img2Div.appendChild(canvas);
+        img2Div.appendChild(canvas2);
       })
       .catch((error) => {
-        console.error("Error pixelating image:", error);
+        console.error("Error pixelating images:", error);
       });
   }
 
-  
+  console.log("Distance: " + distance + " weeks: " + weeks);
 
-  if (distance < 0) {
+
+  if (weeks == "0" && distance < 0) {
     countdownDiv.innerHTML = "Happy Birthday";
     countdownDiv2.innerHTML = "";
 
     imgDiv.parentNode.removeChild(imgDiv);
 
-    playVideo.classList.toggle("hide");
+    playVideo.classList.remove("hide");
+
     playVideo.innerHTML = " Play Video ";
 
     for (let i = 0; i < 4; i++) {

@@ -10,7 +10,7 @@
   --card: #fff;
   --accent: #2b8aef;
   --muted: #6b7280;
-  --sidenavmargin: 0dvw;
+  --sidenavmargin: 20dvw;
   --sidenavimgsize: 8dvw;
   --calcfs: (1.1dvw + 1.1dvh + 1.1vmin);
 }
@@ -162,11 +162,10 @@ footer {
 
 #enter{
     position: absolute;
-    top: 56%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin-left: calc(var(--sidenavmargin) + 5dvw);
+    margin-top: 25dvh;
     height: 60dvh;
-    width: 90dvw;
+    width: 70dvw;
     font-size: var(--calcfs);
     font-size-adjust: 1.75;
     font-weight: bold;
